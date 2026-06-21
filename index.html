@@ -1,0 +1,3202 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTuber Ol! 🎬</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--red:#FF0000;--dark:#080810;--card:#11111c;--card2:#181826;--gold:#FFD700;--green:#00e676;--blue:#00b0ff;--purple:#b388ff;--text:#f0f0f0;--muted:#777;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{overflow-x:hidden;max-width:100vw;}
+body{background:var(--dark);color:var(--text);font-family:'Nunito',sans-serif;min-height:100vh;overflow-x:hidden;max-width:100vw;width:100%;}
+header{background:linear-gradient(90deg,#1a0005,#080810,#001a05);border-bottom:2px solid var(--red);padding:8px 12px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;overflow:hidden;max-width:100vw;}
+.logo{font-family:'Bebas Neue';font-size:1.7rem;color:var(--red);letter-spacing:2px;}.logo span{color:#fff;}
+.hstats{display:flex;gap:5px;flex-wrap:nowrap;overflow:hidden;}
+.hs{display:flex;align-items:center;gap:3px;font-weight:700;font-size:.72rem;padding:2px 7px;background:#ffffff0a;border-radius:14px;white-space:nowrap;}
+.hs.sub{color:#ff6b6b;}.hs.mon{color:var(--gold);}.hs.day{color:var(--blue);}
+.tabs{display:flex;background:#0d0d18;border-bottom:1px solid #1a1a28;position:sticky;top:50px;z-index:190;width:100%;overflow-x:auto;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{flex:0 0 auto;padding:8px 10px;text-align:center;font-size:.65rem;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;transition:all .18s;white-space:nowrap;}
+.tab.active{color:#fff;border-bottom-color:var(--red);}
+.tab-ic{font-size:.9rem;display:block;margin-bottom:1px;}
+.page{display:none;padding:10px 10px 70px;width:100%;max-width:100%;overflow-x:hidden;}
+.page.active{display:block;}
+.stitle{font-family:'Bebas Neue';font-size:1.25rem;color:var(--red);margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.stitle::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,#ff000030,transparent);}
+.card{background:var(--card);border:1px solid #1a1a2a;border-radius:13px;padding:13px;margin-bottom:11px;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.card.red::before{background:linear-gradient(90deg,var(--red),#ff6b35);}
+.card.gold::before{background:linear-gradient(90deg,var(--gold),#ff6d00);}
+.ch-top{display:flex;align-items:center;gap:11px;margin-bottom:11px;}
+.ava{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;border:2px solid var(--red);flex-shrink:0;background:linear-gradient(135deg,#1a0000,#000);}
+.ch-info h2{font-size:1rem;font-weight:900;}.ch-info p{font-size:.7rem;color:var(--muted);margin-top:1px;}
+.badge{display:inline-block;padding:2px 8px;border-radius:11px;font-size:.65rem;font-weight:700;margin-top:3px;}
+.badge.new-b{background:#222;color:#666;}.badge.silver{background:#c0c0c0;color:#000;}.badge.gold-b{background:var(--gold);color:#000;}.badge.ruby{background:#e0115f;color:#fff;}.badge.diamond{background:linear-gradient(135deg,#89cff0,#fff);color:#000;}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:11px;}
+.sbox{background:var(--card2);border:1px solid #1a1a2a;border-radius:9px;padding:9px;text-align:center;}
+.sbox .v{font-family:'Bebas Neue';font-size:1.4rem;line-height:1;}.sbox .l{font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:2px;}
+.sbox.s1 .v{color:#ff6b6b;}.sbox.s2 .v{color:var(--gold);}.sbox.s3 .v{color:var(--blue);}.sbox.s4 .v{color:var(--green);}
+.lvlbar{margin-bottom:11px;}
+.lvltop{display:flex;justify-content:space-between;font-size:.7rem;margin-bottom:3px;}
+.lvlname{color:var(--gold);font-weight:700;}.lvlxp{color:var(--muted);}
+.xptrack{height:7px;background:#1a1a28;border-radius:7px;overflow:hidden;}
+.xpfill{height:100%;background:linear-gradient(90deg,var(--red),var(--gold));border-radius:7px;transition:width .5s;}
+.day-banner{background:linear-gradient(135deg,#0a0a1e,#0e0018);border:1px solid #252540;border-radius:11px;padding:11px 13px;margin-bottom:11px;display:flex;align-items:center;justify-content:space-between;}
+.day-left{display:flex;align-items:center;gap:9px;}.day-ico{font-size:1.8rem;}
+.day-text h3{font-size:.85rem;font-weight:900;}.day-text p{font-size:.68rem;color:var(--muted);}
+.day-right{text-align:right;}
+.dquota{font-size:.72rem;font-weight:700;color:var(--green);}.dquota.done{color:var(--muted);}
+.ndaybtn{margin-top:5px;background:linear-gradient(135deg,#181830,#242440);border:1px solid #303055;border-radius:7px;color:#999;padding:4px 11px;cursor:pointer;font-size:.7rem;font-weight:700;transition:all .14s;}
+.ndaybtn:hover{border-color:var(--blue);color:#fff;}
+.msrow{display:flex;gap:5px;overflow-x:auto;padding-bottom:3px;margin-bottom:13px;}
+.msrow::-webkit-scrollbar{height:2px;}.msrow::-webkit-scrollbar-thumb{background:#333;}
+.ms{flex-shrink:0;background:var(--card2);border:1px solid #1a1a28;border-radius:9px;padding:7px 9px;text-align:center;min-width:66px;}
+.ms.done{border-color:var(--gold);background:#191200;}.ms .mi{font-size:1.2rem;}.ms .ml{font-size:.58rem;color:var(--muted);margin-top:2px;}.ms.done .ml{color:var(--gold);}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.abtn{background:linear-gradient(145deg,#1c1c2e,#14141f);border:1.5px solid #2a2a40;border-radius:14px;padding:14px;cursor:pointer;text-align:left;transition:all .2s;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:4px;}
+.abtn:hover:not(:disabled){border-color:#ff4444;transform:translateY(-2px);box-shadow:0 8px 24px #ff000030;}
+.abtn:active:not(:disabled){transform:translateY(0);}
+.abtn:disabled{opacity:.38;cursor:not-allowed;}
+.abtn .ai{font-size:1.8rem;line-height:1;margin-bottom:2px;}
+.abtn .at{font-weight:900;font-size:1rem;color:#ffffff;line-height:1.2;letter-spacing:.2px;}
+.abtn .ad{font-size:.73rem;color:#8888aa;line-height:1.4;margin-top:1px;}
+.abtn .ar{position:absolute;top:10px;right:10px;font-size:.63rem;font-weight:800;padding:3px 8px;border-radius:10px;letter-spacing:.3px;backdrop-filter:blur(4px);}
+.abtn .ac{font-size:.72rem;font-weight:800;margin-top:6px;padding:4px 8px;background:#ffffff0a;border-radius:7px;display:inline-block;align-self:flex-start;}
+.rival-list{display:flex;flex-direction:column;gap:7px;margin-bottom:13px;}
+.ritem{background:var(--card2);border:1px solid #1a1a2a;border-radius:11px;padding:11px;display:flex;align-items:center;gap:9px;}
+.rava{font-size:1.4rem;width:36px;height:36px;background:#111;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:2px solid #2a2a3a;}
+.rinfo{flex:1;}.rname{font-weight:900;font-size:.8rem;}.rsubs{font-size:.66rem;color:var(--muted);margin-top:1px;}
+.rbar-w{height:5px;background:#1a1a28;border-radius:5px;margin-top:4px;overflow:hidden;}.rbar{height:100%;border-radius:5px;transition:width .5s;}
+.rstatus{font-size:.64rem;font-weight:700;text-align:right;flex-shrink:0;}.rstatus.ah{color:var(--green);}.rstatus.bh{color:#ff6b6b;}
+.scat-tabs{display:flex;gap:5px;margin-bottom:9px;overflow-x:auto;padding-bottom:3px;}
+.scat-tabs::-webkit-scrollbar{height:2px;}.scat-tabs::-webkit-scrollbar-thumb{background:#333;}
+.sctab{flex-shrink:0;background:var(--card2);border:1px solid #1a1a28;border-radius:18px;padding:4px 11px;font-size:.7rem;font-weight:700;cursor:pointer;color:var(--muted);transition:all .14s;white-space:nowrap;}
+.sctab.active{background:var(--red);color:#fff;border-color:var(--red);}
+.shop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:13px;}
+.sitem{background:var(--card);border:2px solid #1a1a28;border-radius:11px;padding:9px;text-align:center;position:relative;transition:all .18s;}
+.sitem.owned{border-color:#00e67650;}.sitem.equipped{border-color:var(--gold);background:#181200;}
+.sitem .si{font-size:1.6rem;margin-bottom:3px;}.sitem .sn{font-size:.74rem;font-weight:700;}.sitem .sb{font-size:.6rem;color:var(--blue);margin:2px 0;}.sitem .sp{font-size:.74rem;color:var(--gold);font-weight:700;}
+.stier{position:absolute;top:4px;left:4px;font-size:.55rem;font-weight:700;padding:1px 4px;border-radius:5px;}
+.eq-badge{position:absolute;top:4px;right:4px;font-size:.55rem;padding:1px 4px;border-radius:5px;font-weight:700;}
+.sbuy{margin-top:5px;background:linear-gradient(135deg,#ffb300,#ff6d00);border:none;border-radius:6px;padding:4px 10px;color:#000;font-weight:900;cursor:pointer;font-size:.7rem;transition:all .11s;width:100%;}
+.sbuy:hover{transform:scale(1.03);}.sbuy:disabled{background:#1e1e28;color:#444;cursor:not-allowed;transform:none;}
+.sequip{margin-top:5px;background:linear-gradient(135deg,#0d260d,#183018);border:1px solid #00e67650;border-radius:6px;padding:4px 10px;color:var(--green);font-weight:900;cursor:pointer;font-size:.7rem;transition:all .11s;width:100%;}
+.sequip.on{background:linear-gradient(135deg,#1a1000,#2a1e00);border-color:var(--gold);color:var(--gold);}
+.vfeed{display:flex;flex-direction:column;gap:7px;margin-bottom:13px;}
+.vitem{background:var(--card2);border:1px solid #1a1a28;border-radius:9px;padding:9px 11px;display:flex;align-items:center;gap:9px;animation:slideIn .3s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:translateX(0)}}
+.vthumb{width:48px;height:32px;border-radius:5px;background:#0a0a18;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;border:1px solid #ff000018;}
+.vinfo{flex:1;}.vtitle{font-size:.74rem;font-weight:700;}.vstats{font-size:.6rem;color:var(--muted);margin-top:1px;}
+.vearn{font-size:.7rem;font-weight:700;color:var(--green);flex-shrink:0;}
+.modal-ov{position:fixed;inset:0;background:#000000cc;z-index:500;display:flex;align-items:center;justify-content:center;padding:11px;animation:fdi .18s;}
+@keyframes fdi{from{opacity:0}to{opacity:1}}
+.modal-ov.hidden{display:none;}
+.modal{background:var(--card);border:1px solid #252535;border-radius:16px;width:calc(100vw - 24px);max-width:500px;max-height:90vh;overflow-y:auto;padding:16px;position:relative;animation:slu .22s;}
+@keyframes slu{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.mcls{position:absolute;top:11px;right:13px;background:#161622;border:none;color:#777;font-size:1rem;width:26px;height:26px;border-radius:50%;cursor:pointer;line-height:26px;text-align:center;transition:all .14s;}
+.mcls:hover{background:var(--red);color:#fff;}
+.msteps{display:flex;gap:4px;margin-bottom:14px;}
+.mstep{flex:1;height:3px;border-radius:3px;background:#1a1a28;transition:background .25s;}
+.mstep.active{background:var(--red);}.mstep.done{background:var(--green);}
+.step-p{display:none;}.step-p.active{display:block;animation:sin .18s;}
+@keyframes sin{from{opacity:0;transform:translateX(7px)}to{opacity:1;transform:translateX(0)}}
+.slbl{font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:7px;font-weight:700;}
+.ogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:11px;}
+.ogrid.c2{grid-template-columns:repeat(2,1fr);}.ogrid.c4{grid-template-columns:repeat(4,1fr);}
+.ocard{background:var(--card2);border:2px solid #1a1a28;border-radius:9px;padding:9px 5px;text-align:center;cursor:pointer;transition:all .16s;position:relative;}
+.ocard:hover{border-color:#3a3a4a;}.ocard.sel{border-color:var(--red);background:#180808;}
+.ocard.locked{opacity:.4;cursor:not-allowed;}
+.ocard .oi{font-size:1.4rem;margin-bottom:3px;}.ocard .on{font-size:.68rem;font-weight:700;}.ocard .os{font-size:.58rem;color:var(--muted);margin-top:1px;}
+.ocard .ob{position:absolute;top:3px;right:3px;font-size:.54rem;background:#00e67615;color:var(--green);padding:1px 3px;border-radius:4px;font-weight:700;}
+.prev-card{background:linear-gradient(135deg,#0e0008,#08080e);border:1px solid #252535;border-radius:11px;padding:13px;margin-bottom:11px;}
+.prev-thumb{width:100%;height:68px;border-radius:7px;background:#0a0a14;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:9px;position:relative;overflow:hidden;}
+.prev-bg{position:absolute;inset:0;font-size:5rem;display:flex;align-items:center;justify-content:center;opacity:.1;filter:blur(3px);}
+.prev-main{position:relative;z-index:1;}
+.prev-title{font-weight:900;font-size:.85rem;margin-bottom:5px;}
+.prev-tags{display:flex;gap:5px;flex-wrap:wrap;}
+.ptag{font-size:.6rem;padding:2px 6px;border-radius:9px;font-weight:600;}
+.ptag.c{background:#ff000015;color:#ff6b6b;}.ptag.d{background:#00b0ff15;color:var(--blue);}.ptag.q{background:#ffd70015;color:var(--gold);}.ptag.s{background:#00e67615;color:var(--green);}
+.egrid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:11px;}
+.ebox{background:var(--card2);border-radius:7px;padding:7px;text-align:center;}
+.ebox .ev{font-family:'Bebas Neue';font-size:1.1rem;}.ebox .el{font-size:.58rem;color:var(--muted);}
+.ebox.es1 .ev{color:#ff6b6b;}.ebox.es2 .ev{color:var(--gold);}.ebox.es3 .ev{color:var(--blue);}
+.mfooter{display:flex;gap:7px;margin-top:3px;}
+.mbk{background:#161622;border:1px solid #252535;color:#777;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:700;font-size:.78rem;}
+.mbk.hidden{display:none;}
+.mnx{flex:1;background:linear-gradient(135deg,var(--red),#ff4500);border:none;color:#fff;padding:9px;border-radius:8px;cursor:pointer;font-weight:900;font-size:.84rem;}
+.mup{flex:1;background:linear-gradient(135deg,#00c853,#00e676);border:none;color:#000;padding:9px;border-radius:8px;cursor:pointer;font-weight:900;font-size:.86rem;}
+#toast-c{position:fixed;bottom:14px;right:13px;z-index:999;display:flex;flex-direction:column-reverse;gap:5px;}
+.toast{background:var(--card);border:1px solid #252535;border-radius:8px;padding:7px 12px;font-size:.74rem;font-weight:600;animation:tin .25s,tout .25s 2.5s forwards;pointer-events:none;max-width:230px;display:flex;align-items:center;gap:5px;}
+@keyframes tin{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes tout{to{opacity:0;transform:translateX(20px)}}
+.floatn{position:fixed;top:65px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--red),#ff6d00);color:#fff;font-weight:900;padding:7px 18px;border-radius:22px;font-size:.84rem;z-index:300;pointer-events:none;white-space:nowrap;animation:fup 1.5s forwards;}
+@keyframes fup{0%{opacity:1;top:65px}100%{opacity:0;top:18px}}
+
+/* HAMBURGER */
+.hamburger{background:none;border:none;cursor:pointer;padding:4px 6px;display:flex;flex-direction:column;gap:5px;flex-shrink:0;}
+.hamburger span{display:block;width:22px;height:2px;background:#ccc;border-radius:2px;transition:all .2s;}
+.hamburger:hover span{background:#fff;}
+
+/* DRAWER */
+.drawer-ov{position:fixed;inset:0;background:#00000088;z-index:400;display:none;}
+.drawer-ov.open{display:block;}
+.drawer{position:fixed;top:0;right:-100vw;width:min(320px,92vw);height:100%;background:#0e0e1a;border-left:1px solid #2a2a3a;z-index:401;transition:right .25s ease;display:flex;flex-direction:column;overflow-y:hidden;}
+.drawer.open{right:0;}
+.drawer-head{padding:18px 16px 14px;border-bottom:1px solid #1a1a28;display:flex;align-items:center;justify-content:space-between;}
+.drawer-head h3{font-family:'Bebas Neue';font-size:1.3rem;color:var(--red);}
+.dcls{background:none;border:none;color:#777;font-size:1.2rem;cursor:pointer;}
+.drawer-section{padding:14px 16px;border-bottom:1px solid #1a1a28;}
+.drawer-section h4{font-size:.72rem;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:10px;font-weight:700;}
+.drawer-user{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.drawer-ava{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--red),#ff6b35);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.drawer-uname{font-weight:900;font-size:.9rem;}
+.drawer-ustats{font-size:.68rem;color:var(--muted);margin-top:1px;}
+.dinput{width:100%;background:#1a1a28;border:1px solid #2a2a3a;border-radius:8px;padding:8px 11px;color:#fff;font-size:.82rem;font-family:'Nunito',sans-serif;margin-bottom:7px;outline:none;}
+.dinput:focus{border-color:var(--red);}
+.dbtn{width:100%;padding:9px;border:none;border-radius:8px;font-weight:900;cursor:pointer;font-size:.84rem;transition:all .14s;margin-bottom:5px;}
+.dbtn.primary{background:linear-gradient(135deg,var(--red),#ff4500);color:#fff;}
+.dbtn.secondary{background:#1a1a28;border:1px solid #2a2a3a;color:#aaa;}
+.dbtn.danger{background:#1a0808;border:1px solid #ff000033;color:#ff6b6b;}
+.dbtn:hover{opacity:.9;transform:translateY(-1px);}
+.lang-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;}
+.lang-btn{background:#1a1a28;border:1px solid #2a2a3a;border-radius:8px;padding:7px 10px;cursor:pointer;font-size:.78rem;font-weight:700;color:#ccc;transition:all .14s;text-align:center;}
+.lang-btn.active{background:var(--red);color:#fff;border-color:var(--red);}
+.lang-btn:hover{border-color:#555;}
+
+/* LOGIN SCREEN */
+.login-screen{position:fixed;inset:0;background:var(--dark);z-index:600;display:flex;align-items:center;justify-content:center;padding:20px;}
+.login-screen.hidden{display:none;}
+.login-box{background:var(--card);border:1px solid #2a2a3a;border-radius:18px;padding:22px 16px;width:calc(100vw - 28px);max-width:360px;}
+.login-logo{font-family:'Bebas Neue';font-size:2.4rem;color:var(--red);text-align:center;margin-bottom:4px;}
+.login-logo span{color:#fff;}
+.login-sub{text-align:center;color:var(--muted);font-size:.78rem;margin-bottom:22px;}
+.login-tabs{display:flex;background:#1a1a28;border-radius:9px;padding:3px;margin-bottom:18px;}
+.login-tab{flex:1;padding:7px;text-align:center;border-radius:7px;cursor:pointer;font-size:.8rem;font-weight:700;color:var(--muted);transition:all .15s;}
+.login-tab.active{background:var(--red);color:#fff;}
+.login-err{color:#ff6b6b;font-size:.72rem;text-align:center;margin-bottom:8px;min-height:16px;}
+
+/* LEADERBOARD */
+.lb-tabs{display:flex;gap:6px;margin-bottom:12px;}
+.lb-tab{flex:1;background:#1a1a28;border:1px solid #2a2a3a;border-radius:8px;padding:7px;text-align:center;cursor:pointer;font-size:.74rem;font-weight:700;color:var(--muted);transition:all .14s;}
+.lb-tab.active{background:var(--red);color:#fff;border-color:var(--red);}
+.lb-list{display:flex;flex-direction:column;gap:6px;}
+.lb-item{background:#1a1a28;border:1px solid #222;border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;}
+.lb-item.me{border-color:var(--gold);background:#1a1500;}
+.lb-rank{font-family:'Bebas Neue';font-size:1.3rem;width:28px;text-align:center;flex-shrink:0;}
+.lb-rank.r1{color:var(--gold);}
+.lb-rank.r2{color:#c0c0c0;}
+.lb-rank.r3{color:#cd7f32;}
+.lb-ava{font-size:1.2rem;flex-shrink:0;}
+.lb-info{flex:1;}
+.lb-name{font-weight:900;font-size:.82rem;}
+.lb-val{font-size:.68rem;color:var(--muted);margin-top:1px;}
+.lb-score{font-family:'Bebas Neue';font-size:1.1rem;color:var(--gold);}
+.lb-loading{text-align:center;color:var(--muted);padding:20px;font-size:.82rem;}
+
+
+/* ─── ROZET SİSTEMİ ─── */
+.badge-shelf{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;}
+.rbadge{display:flex;flex-direction:column;align-items:center;gap:3px;
+  background:var(--card2);border:1.5px solid #252535;border-radius:11px;
+  padding:9px 7px;min-width:64px;text-align:center;transition:all .25s;}
+.rbadge.earned{border-color:var(--gold);background:linear-gradient(145deg,#1a1500,#1e1c0a);}
+.rbadge.earned .rb-ic{filter:none;}
+.rbadge .rb-ic{font-size:1.5rem;filter:grayscale(1) opacity(.35);}
+.rbadge .rb-name{font-size:.6rem;font-weight:700;color:#555;line-height:1.2;}
+.rbadge.earned .rb-name{color:var(--gold);}
+.rbadge .rb-desc{font-size:.55rem;color:#444;line-height:1.2;}
+.rbadge.earned .rb-desc{color:#888;}
+
+/* ─── RASTGELE OLAY POPUP ─── */
+.event-popup{
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:#000000bb;z-index:700;
+  display:flex;align-items:center;justify-content:center;
+  padding:16px;animation:fdi .2s;
+}
+.event-popup.hidden{display:none;}
+.event-box{
+  background:var(--card);border:1.5px solid #2a2a3a;border-radius:18px;
+  padding:24px 20px;width:100%;max-width:340px;text-align:center;
+  animation:slu .25s;
+}
+.event-box .ev-ic{font-size:3rem;margin-bottom:10px;display:block;}
+.event-box .ev-type{font-size:.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.event-box .ev-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;margin-bottom:8px;line-height:1.2;}
+.event-box .ev-desc{font-size:.8rem;color:#aaa;line-height:1.5;margin-bottom:16px;}
+.event-box .ev-effect{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 18px;border-radius:10px;font-weight:900;font-size:.9rem;
+  margin-bottom:16px;
+}
+.event-box .ev-effect.pos{background:#00e67622;color:var(--green);border:1px solid #00e67644;}
+.event-box .ev-effect.neg{background:#ff000022;color:#ff6b6b;border:1px solid #ff000044;}
+.event-box .ev-effect.neu{background:#00b0ff22;color:var(--blue);border:1px solid #00b0ff44;}
+.event-btn{
+  background:linear-gradient(135deg,var(--red),#ff4500);border:none;border-radius:10px;
+  padding:10px 32px;color:#fff;font-weight:900;cursor:pointer;font-size:.9rem;
+  transition:all .15s;
+}
+.event-btn:hover{transform:translateY(-1px);box-shadow:0 5px 16px #ff000040;}
+
+
+/* ─── STÜDYO SİSTEMİ ─── */
+.studio-card{
+  background:linear-gradient(145deg,#0e0e1c,#14101e);
+  border:1.5px solid #2a2a40;border-radius:14px;
+  padding:14px;margin-bottom:12px;position:relative;overflow:hidden;
+}
+.studio-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--purple),var(--blue));
+}
+.studio-visual{
+  width:100%;height:110px;border-radius:10px;margin-bottom:12px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;font-size:3rem;
+  background:linear-gradient(135deg,#0a0a18,#12101e);
+  border:1px solid #252535;
+}
+.studio-visual .sv-bg{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:6rem;opacity:.08;filter:blur(4px);
+}
+.studio-visual .sv-main{position:relative;z-index:1;font-size:2.8rem;}
+.studio-visual .sv-label{
+  position:absolute;bottom:8px;left:0;right:0;text-align:center;
+  font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:1.5px;
+  color:#ffffff88;
+}
+.studio-info{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px;}
+.studio-name{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#fff;line-height:1;}
+.studio-tier{font-size:.62rem;color:var(--purple);font-weight:700;letter-spacing:.5px;margin-top:2px;}
+.studio-bonuses{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.studio-bonus-tag{
+  font-size:.66rem;font-weight:700;padding:3px 8px;border-radius:8px;
+  background:#ffffff0a;border:1px solid #2a2a3a;
+}
+.studio-upgrade-btn{
+  width:100%;padding:11px;border:none;border-radius:10px;
+  font-weight:900;font-size:.92rem;cursor:pointer;transition:all .18s;
+  background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;
+}
+.studio-upgrade-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px #b388ff40;}
+.studio-upgrade-btn:disabled{background:#1a1a28;color:#444;cursor:not-allowed;transform:none;box-shadow:none;}
+.studio-max{
+  width:100%;padding:11px;border-radius:10px;
+  background:linear-gradient(135deg,var(--gold),#ff6d00);color:#000;
+  font-weight:900;font-size:.92rem;text-align:center;
+}
+.studio-next-info{font-size:.72rem;color:#777;margin-top:8px;text-align:center;line-height:1.5;}
+
+
+/* ─── TOPLULUK & ANALİTİK & TURNUVA ─── */
+.loyalty-bar-wrap{margin:10px 0 14px;}
+.loyalty-top{display:flex;justify-content:space-between;font-size:.72rem;margin-bottom:4px;}
+.loyalty-lbl{color:var(--purple);font-weight:700;}
+.loyalty-val{color:var(--muted);}
+.loyalty-track{height:8px;background:#1a1a28;border-radius:8px;overflow:hidden;}
+.loyalty-fill{height:100%;background:linear-gradient(90deg,var(--purple),#ff9de2);border-radius:8px;transition:width .5s;}
+.fan-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+.fan-box{background:var(--card2);border:1px solid #252535;border-radius:10px;padding:10px;text-align:center;}
+.fan-box .fv{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;}
+.fan-box .fl{font-size:.62rem;color:var(--muted);margin-top:2px;}
+.fan-box.fp .fv{color:var(--purple);}
+.fan-box.fg .fv{color:var(--green);}
+.fan-box.fb .fv{color:var(--blue);}
+.comment-feed{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
+.cmt-item{background:var(--card2);border:1px solid #1e1e30;border-radius:10px;padding:10px 12px;position:relative;}
+.cmt-item.positive{border-left:3px solid var(--green);}
+.cmt-item.negative{border-left:3px solid #ff6b6b;}
+.cmt-item.neutral{border-left:3px solid var(--blue);}
+.cmt-top{display:flex;align-items:center;gap:7px;margin-bottom:5px;}
+.cmt-ava{font-size:1.1rem;}
+.cmt-name{font-weight:700;font-size:.78rem;}
+.cmt-time{font-size:.62rem;color:var(--muted);margin-left:auto;}
+.cmt-text{font-size:.76rem;color:#ccc;line-height:1.4;}
+.cmt-reply-btn{margin-top:6px;background:#ffffff08;border:1px solid #252535;border-radius:7px;
+  padding:3px 10px;color:#888;font-size:.65rem;font-weight:700;cursor:pointer;transition:all .14s;}
+.cmt-reply-btn:hover{border-color:var(--purple);color:var(--purple);}
+.cmt-replied{margin-top:5px;background:#b388ff12;border-radius:7px;padding:5px 10px;
+  font-size:.7rem;color:#b388ff;border-left:2px solid var(--purple);}
+/* ANALİTİK */
+.stat-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px;}
+.stat-card{background:var(--card2);border:1px solid #1e1e30;border-radius:11px;padding:12px;}
+.stat-card .sc-label{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px;}
+.stat-card .sc-val{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;line-height:1;}
+.stat-card .sc-sub{font-size:.65rem;color:var(--muted);margin-top:2px;}
+.cat-bar-list{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
+.cat-bar-item{background:var(--card2);border-radius:9px;padding:9px 11px;}
+.cat-bar-top{display:flex;justify-content:space-between;font-size:.75rem;font-weight:700;margin-bottom:5px;}
+.cat-bar-track{height:6px;background:#1a1a28;border-radius:6px;overflow:hidden;}
+.cat-bar-fill{height:100%;border-radius:6px;transition:width .6s;}
+.chart-wrap{background:var(--card2);border:1px solid #1e1e30;border-radius:11px;padding:12px;margin-bottom:14px;}
+.chart-title{font-size:.7rem;color:var(--muted);margin-bottom:8px;font-weight:700;text-transform:uppercase;}
+.chart-bars{display:flex;align-items:flex-end;gap:4px;height:80px;}
+.chart-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.chart-bar{width:100%;border-radius:3px 3px 0 0;transition:height .4s;min-height:2px;}
+.chart-bar-lbl{font-size:.5rem;color:var(--muted);}
+/* TURNUVA */
+.tourney-header{background:linear-gradient(135deg,#1a0a2e,#0e0818);border:1.5px solid #4a2a7a;
+  border-radius:14px;padding:16px;margin-bottom:12px;text-align:center;position:relative;overflow:hidden;}
+.tourney-header::before{content:'🏆';position:absolute;font-size:5rem;opacity:.06;top:-10px;right:10px;}
+.tourney-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--purple);letter-spacing:1px;}
+.tourney-subtitle{font-size:.72rem;color:#888;margin-top:3px;}
+.tourney-score{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:#fff;margin:8px 0 4px;}
+.tourney-score-lbl{font-size:.65rem;color:var(--purple);font-weight:700;letter-spacing:.5px;}
+.tourney-prize{display:inline-flex;align-items:center;gap:6px;background:#ffd70018;
+  border:1px solid #ffd70030;border-radius:20px;padding:4px 12px;margin-top:8px;font-size:.72rem;color:var(--gold);font-weight:700;}
+.tourney-lb{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.tlb-item{background:var(--card2);border:1px solid #1e1e30;border-radius:10px;padding:10px 12px;
+  display:flex;align-items:center;gap:10px;}
+.tlb-item.me{border-color:var(--purple);background:#1a0a28;}
+.tlb-rank{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;width:26px;text-align:center;flex-shrink:0;}
+.tlb-info{flex:1;}
+.tlb-name{font-weight:900;font-size:.8rem;}
+.tlb-score{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--purple);}
+
+
+/* ═══ GÖRSEL & SES EFEKTLERİ ═══ */
+
+/* Abone sayacı zıplama */
+@keyframes subBounce {
+  0%  { transform: scale(1); }
+  30% { transform: scale(1.35); color: #ff6b6b; }
+  60% { transform: scale(0.92); }
+  100%{ transform: scale(1); }
+}
+.sub-bounce { animation: subBounce 0.45s ease; }
+
+/* Para parıldama */
+@keyframes moneyShine {
+  0%  { transform: scale(1); }
+  25% { transform: scale(1.3); color: var(--gold); filter: drop-shadow(0 0 6px #ffd70088); }
+  70% { transform: scale(0.95); }
+  100%{ transform: scale(1); }
+}
+.money-shine { animation: moneyShine 0.5s ease; }
+
+/* Kamera flaş efekti */
+.cam-flash {
+  position: fixed; inset: 0; z-index: 900;
+  background: #ffffff;
+  pointer-events: none;
+  animation: camFlash 0.35s ease forwards;
+}
+@keyframes camFlash {
+  0%  { opacity: 0.55; }
+  100%{ opacity: 0; }
+}
+
+/* Rozet popup animasyonu */
+@keyframes badgePop {
+  0%   { transform: scale(0.3) rotate(-15deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(4deg);   opacity: 1; }
+  80%  { transform: scale(0.93) rotate(-2deg); }
+  100% { transform: scale(1) rotate(0deg);     opacity: 1; }
+}
+.badge-pop { animation: badgePop 0.5s cubic-bezier(.36,.07,.19,.97); }
+
+/* Viral alev efekti */
+.viral-burst {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem; z-index: 800;
+  pointer-events: none;
+  animation: viralBurst 1.2s ease forwards;
+}
+@keyframes viralBurst {
+  0%   { opacity: 0; transform: translate(-50%,-50%) scale(0.2); }
+  30%  { opacity: 1; transform: translate(-50%,-50%) scale(1.4); }
+  70%  { opacity: 1; transform: translate(-50%,-50%) scale(1.1); }
+  100% { opacity: 0; transform: translate(-50%,-60%) scale(0.8); }
+}
+
+/* Abone milestone konfeti */
+.confetti-piece {
+  position: fixed; width: 8px; height: 8px;
+  border-radius: 2px; z-index: 800; pointer-events: none;
+}
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Para uçma efekti */
+.money-fly {
+  position: fixed; font-size: 1.2rem; z-index: 800;
+  pointer-events: none; font-weight: 900; color: var(--gold);
+  text-shadow: 0 0 8px #ffd70088;
+  animation: moneyFly 1.1s ease forwards;
+}
+@keyframes moneyFly {
+  0%   { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-90px) scale(0.7); }
+}
+
+/* Buton ripple */
+.abtn::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at var(--rx,50%) var(--ry,50%), #ffffff18 0%, transparent 60%);
+  opacity: 0; border-radius: inherit;
+  transition: opacity 0.3s;
+}
+.abtn.rippling::after { opacity: 1; }
+
+/* Header abone sayısı pulse */
+@keyframes subPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.18); color: #ff4444; }
+  100% { transform: scale(1); }
+}
+.sub-pulse { animation: subPulse 0.4s ease; }
+
+/* Toast animasyonu iyileştirme */
+.toast { box-shadow: 0 4px 16px #00000066; }
+
+/* Rozet kazanma overlay */
+.badge-earn-overlay {
+  position: fixed; inset: 0; background: #00000077;
+  z-index: 750; display: flex; align-items: center; justify-content: center;
+  animation: fdi 0.2s;
+}
+.badge-earn-box {
+  background: linear-gradient(145deg, #1a1520, #0e0c18);
+  border: 2px solid var(--gold); border-radius: 20px;
+  padding: 28px 24px; text-align: center; max-width: 280px; width: 90%;
+  animation: badgePop 0.5s cubic-bezier(.36,.07,.19,.97);
+}
+.beo-icon { font-size: 3.5rem; margin-bottom: 10px; display: block; }
+.beo-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 4px; }
+.beo-name  { font-weight: 900; font-size: 1rem; color: #fff; margin-bottom: 6px; }
+.beo-desc  { font-size: .75rem; color: #999; margin-bottom: 16px; }
+.beo-btn   { background: linear-gradient(135deg, var(--gold), #ff6d00); border: none;
+             border-radius: 10px; padding: 9px 28px; color: #000; font-weight: 900;
+             cursor: pointer; font-size: .88rem; }
+
+
+/* ─── GÜNLÜK GÖREV ─── */
+.quest-card{
+  background:linear-gradient(145deg,#0e1420,#0a1018);
+  border:1.5px solid #1e3040;border-radius:13px;
+  padding:12px 14px;margin-bottom:8px;
+  display:flex;align-items:center;gap:12px;
+  transition:all .2s;
+}
+.quest-card.done{border-color:#00e67644;background:linear-gradient(145deg,#071510,#071510);}
+.quest-card.done .qc-title{text-decoration:line-through;color:#555;}
+.qc-icon{font-size:1.6rem;flex-shrink:0;}
+.qc-body{flex:1;}
+.qc-title{font-weight:700;font-size:.82rem;color:#ddd;line-height:1.3;}
+.qc-progress{font-size:.65rem;color:var(--muted);margin-top:3px;}
+.qc-prog-bar{height:5px;background:#1a1a28;border-radius:5px;margin-top:5px;overflow:hidden;}
+.qc-prog-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--green));border-radius:5px;transition:width .4s;}
+.qc-reward{text-align:right;flex-shrink:0;}
+.qc-xp{font-size:.68rem;color:var(--blue);font-weight:700;}
+.qc-bonus{font-size:.68rem;color:var(--gold);font-weight:700;margin-top:2px;}
+.quest-refresh{font-size:.65rem;color:var(--muted);text-align:center;margin-top:4px;margin-bottom:12px;}
+
+/* ─── KRİZ ANLARI ─── */
+.crisis-popup{
+  position:fixed;inset:0;background:#00000099;z-index:700;
+  display:flex;align-items:center;justify-content:center;padding:14px;
+}
+.crisis-popup.hidden{display:none;}
+.crisis-box{
+  background:var(--card);border:2px solid #ff444466;border-radius:18px;
+  padding:22px 18px;width:100%;max-width:360px;animation:slu .25s;
+}
+.crisis-type{font-size:.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:#ff6b6b;margin-bottom:6px;}
+.crisis-icon{font-size:2.8rem;margin-bottom:8px;display:block;}
+.crisis-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;margin-bottom:8px;line-height:1.2;}
+.crisis-desc{font-size:.78rem;color:#aaa;line-height:1.5;margin-bottom:16px;}
+.crisis-choices{display:flex;flex-direction:column;gap:8px;}
+.crisis-choice{
+  background:#181828;border:1px solid #2a2a3a;border-radius:10px;
+  padding:10px 14px;cursor:pointer;text-align:left;transition:all .18s;
+}
+.crisis-choice:hover{border-color:var(--blue);background:#141424;}
+.cc-label{font-weight:700;font-size:.82rem;color:#fff;}
+.cc-effect{font-size:.68rem;color:var(--muted);margin-top:3px;}
+.cc-effect.good{color:var(--green);}
+.cc-effect.bad{color:#ff6b6b;}
+.cc-effect.risky{color:var(--gold);}
+
+@media(max-width:480px){
+  .sgrid{grid-template-columns:repeat(2,1fr);}
+  .agrid{grid-template-columns:1fr;}
+  .shop-grid{grid-template-columns:repeat(2,1fr);}
+  .ogrid{grid-template-columns:repeat(2,1fr);}
+  .ogrid.c4{grid-template-columns:repeat(3,1fr);}
+  .fan-stats{grid-template-columns:repeat(3,1fr);}
+  .stat-cards{grid-template-columns:1fr;}
+  .hstats .hs.day{display:none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">📺 You<span>Tuber</span></div>
+  <div class="hstats">
+    <div class="hs sub">👥<span id="hd-subs">0</span></div>
+    <div class="hs mon">💰₺<span id="hd-money">0</span></div>
+    <div class="hs day">📅<span id="hd-day">Gün 1</span></div>
+  </div>
+  <button class="hamburger" onclick="openDrawer()" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="tabs" style="overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;">
+  <div class="tab active" onclick="switchTab('home')"><span class="tab-ic">🏠</span>Kanal</div>
+  <div class="tab" onclick="switchTab('action')"><span class="tab-ic">🎬</span>Aksiyon</div>
+  <div class="tab" onclick="switchTab('rivals')"><span class="tab-ic">⚔️</span>Rakipler</div>
+  <div class="tab" onclick="switchTab('shop')"><span class="tab-ic">🛒</span>Market</div>
+  <div class="tab" onclick="switchTab('community')"><span class="tab-ic">👥</span>Topluluk</div>
+  <div class="tab" onclick="switchTab('analytics')"><span class="tab-ic">📊</span>Analitik</div>
+  <div class="tab" onclick="switchTab('tourney')"><span class="tab-ic">🏆</span>Turnuva</div>
+  <div class="tab" onclick="switchTab('videos')"><span class="tab-ic">📋</span>Arşiv</div>
+</div>
+
+<!-- HOME -->
+<div class="page active" id="tab-home">
+  <div class="day-banner">
+    <div class="day-left"><div class="day-ico" id="season-ic">🌸</div>
+      <div class="day-text"><h3 id="day-lbl">Gün 1 — İlkbahar</h3><p id="day-sub">Günlük hedef: 3 video çek</p></div>
+    </div>
+    <div class="day-right">
+      <div class="dquota" id="dquota">📹 0/3 video</div>
+      <button class="ndaybtn" onclick="nextDay()">Sonraki Gün →</button>
+    </div>
+  </div>
+  <div class="card red">
+    <div class="ch-top">
+      <div class="ava" id="avatar">🎬</div>
+      <div class="ch-info">
+        <h2>Benim Kanalım</h2>
+        <p>İçerik Üreticisi • <span id="studio-badge-txt" style="color:var(--purple);font-weight:700;">🏠 Kiralık Oda</span></p>
+        <span class="badge new-b" id="ch-badge">🌱 Yeni Başlayan</span>
+      </div>
+    </div>
+    <div class="lvlbar">
+      <div class="lvltop"><span class="lvlname" id="lvlname">🌱 Çaylak Creator</span><span class="lvlxp" id="lvlxp">0/150 XP</span></div>
+      <div class="xptrack"><div class="xpfill" id="xpfill" style="width:0%"></div></div>
+    </div>
+  </div>
+  <div class="sgrid">
+    <div class="sbox s1"><div class="v" id="st-subs">0</div><div class="l" id="lbl-subs">Abone</div></div>
+    <div class="sbox s2"><div class="v" id="st-mon">₺0</div><div class="l" id="lbl-money">Para</div></div>
+    <div class="sbox s3"><div class="v" id="st-views">0</div><div class="l" id="lbl-views">İzlenme</div></div>
+    <div class="sbox s4"><div class="v" id="st-vids">0</div><div class="l" id="lbl-vids">Video</div></div>
+  </div>
+  <div class="stitle" id="stitle-quests">🎯 Günlük Görevler</div>
+  <div id="quest-list"></div>
+  <div class="quest-refresh" id="quest-refresh"></div>
+  <div class="stitle" id="stitle-goals">🏆 Hedefler</div>
+  <div class="msrow" id="msrow"></div>
+
+  <div class="stitle" id="stitle-badges">🏅 Rozetler</div>
+  <div class="badge-shelf" id="badge-shelf"></div>
+</div>
+
+<!-- ACTION -->
+<div class="page" id="tab-action">
+  <div class="stitle" id="stitle-action">🎬 Günlük Aksiyon</div>
+  <div class="agrid">
+    <button class="abtn" id="btn-video" onclick="sfxClick();openVideoModal()">
+      <div class="ai">🎥</div><div class="at">Video Çek</div><div class="ad">Günde max 3 video</div>
+      <div class="ar" style="background:#ff000018;color:#ff6b6b;">+Abone+Para</div>
+      <div class="ac" id="ac-video" style="color:var(--green);">✓ Hazır</div>
+    </button>
+    <button class="abtn" id="btn-collab" onclick="sfxClick();doCollab()">
+      <div class="ai">🤝</div><div class="at">Kolaborasyon</div><div class="ad">Her 5 videoda 1 hak</div>
+      <div class="ar" style="background:#ffd70018;color:var(--gold);">+Abone</div>
+      <div class="ac" id="ac-collab" style="color:#ff6b6b;">📹 5 video gerek</div>
+    </button>
+    <button class="abtn" id="btn-stream" onclick="sfxClick();doStream()">
+      <div class="ai">🔴</div><div class="at">Canlı Yayın</div><div class="ad">Her 3 günde 1 kez</div>
+      <div class="ar" style="background:#ff000018;color:#ff6b6b;">+Para+Az Abone</div>
+      <div class="ac" id="ac-stream" style="color:var(--green);">✓ Hazır</div>
+    </button>
+    <button class="abtn" id="btn-trend" onclick="sfxClick();doTrend()">
+      <div class="ai">📈</div><div class="at">Trend Video</div><div class="ad">Her 4 videoda • %45 viral şans</div>
+      <div class="ar" style="background:#00e67618;color:var(--green);">Viral?</div>
+      <div class="ac" id="ac-trend" style="color:#ff6b6b;">📹 4 video gerek</div>
+    </button>
+    <button class="abtn" id="btn-partner" onclick="sfxClick();doPartnerVideo()">
+      <div class="ai">🎞️</div><div class="at">Partner Video</div><div class="ad">Haftada 1 kez (7 günde)</div>
+      <div class="ar" style="background:#b388ff18;color:var(--purple);">+Büyük Abone</div>
+      <div class="ac" id="ac-partner" style="color:var(--green);">✓ Hazır</div>
+    </button>
+    <button class="abtn" id="btn-sponsor" onclick="sfxClick();doSponsored()">
+      <div class="ai">🏷️</div><div class="at">Sponsorluk</div><div class="ad">Her 6 videoda • 1K abone şart</div>
+      <div class="ar" style="background:#ffd70018;color:var(--gold);">+Para</div>
+      <div class="ac" id="ac-sponsor" style="color:var(--muted);">1K abone gerek</div>
+    </button>
+  </div>
+</div>
+
+<!-- RIVALS -->
+<div class="page" id="tab-rivals">
+  <div class="stitle" id="stitle-rivals">⚔️ Rakip YouTuberlar</div>
+  <div id="rival-list" class="rival-list"></div>
+</div>
+
+<!-- SHOP -->
+<div class="page" id="tab-shop">
+  <div class="stitle" id="stitle-shop">🛒 Ekipman Marketi</div>
+  <div style="display:flex;gap:8px;margin-bottom:12px;">
+    <button class="sctab active" id="shop-tab-equip" onclick="switchShopMainTab('equip')" style="flex:1;padding:8px;">🛠️ Ekipman</button>
+    <button class="sctab" id="shop-tab-studio" onclick="switchShopMainTab('studio')" style="flex:1;padding:8px;">🏠 Stüdyo</button>
+  </div>
+  <div id="shop-equip-panel">
+    <div class="scat-tabs" id="scat-tabs"></div>
+    <div class="shop-grid" id="shop-grid"></div>
+  </div>
+  <div id="shop-studio-panel" style="display:none">
+    <div id="studio-panel"></div>
+  </div>
+</div>
+
+<!-- TOPLULUK -->
+<div class="page" id="tab-community">
+  <div class="stitle" id="stitle-community">👥 İzleyici Topluluğu</div>
+  <div class="loyalty-bar-wrap">
+    <div class="loyalty-top"><span class="loyalty-lbl">💜 Bağlılık Puanı</span><span class="loyalty-val" id="loyalty-val">0 / 100</span></div>
+    <div class="loyalty-track"><div class="loyalty-fill" id="loyalty-fill" style="width:0%"></div></div>
+  </div>
+  <div class="fan-stats">
+    <div class="fan-box fp"><div class="fv" id="fan-loyal">0</div><div class="fl">Sadık Hayran</div></div>
+    <div class="fan-box fg"><div class="fv" id="fan-total">0</div><div class="fl">Toplam Abone</div></div>
+    <div class="fan-box fb"><div class="fv" id="fan-rate">0%</div><div class="fl">Bağlılık Oranı</div></div>
+  </div>
+  <div class="stitle">💬 Son Yorumlar</div>
+  <div class="comment-feed" id="comment-feed">
+    <div style="color:var(--muted);font-size:.8rem;text-align:center;padding:20px;">Henüz yorum yok — video çekince yorumlar gelecek!</div>
+  </div>
+</div>
+
+<!-- ANALİTİK -->
+<div class="page" id="tab-analytics">
+  <div class="stitle" id="stitle-analytics">📊 Kanal Analitiği</div>
+  <div class="stat-cards" id="analytics-cards"></div>
+  <div class="stitle">🎯 Kategori Performansı</div>
+  <div class="cat-bar-list" id="cat-bar-list"></div>
+  <div class="chart-wrap">
+    <div class="chart-title">📈 Son 7 Video — Abone Kazanımı</div>
+    <div class="chart-bars" id="chart-bars"></div>
+  </div>
+</div>
+
+<!-- TURNUVA -->
+<div class="page" id="tab-tourney">
+  <div class="stitle" id="stitle-tourney">🏆 Haftalık Turnuva</div>
+  <div class="tourney-header">
+    <div class="tourney-title">YOUTUBER TURNUVASI</div>
+    <div class="tourney-subtitle" id="tourney-week-lbl">Hafta 1 — Bu hafta en çok abone kazan!</div>
+    <div class="tourney-score" id="tourney-score">0</div>
+    <div class="tourney-score-lbl">BU HAFTAKİ ABONE KAZANIMI</div>
+    <div class="tourney-prize" id="tourney-prize">🥇 1. Ödül: ₺50.000 + 5.000 Abone Bonusu</div>
+  </div>
+  <div class="stitle">📋 Bu Haftanın Sıralaması</div>
+  <div class="tourney-lb" id="tourney-lb"></div>
+  <div style="background:var(--card2);border-radius:11px;padding:12px;font-size:.75rem;color:#777;line-height:1.6;margin-bottom:14px;">
+    💡 Her yeni gün turnuva puanın güncellenir. Hafta sonunda (7 günde bir) ödüller dağıtılır ve yeni turnuva başlar.
+  </div>
+</div>
+
+<!-- VIDEOS -->
+<div class="page" id="tab-videos">
+  <div class="stitle" id="stitle-archive">📋 Video Arşivi</div>
+  <div id="vfeed" class="vfeed"></div>
+</div>
+
+<!-- VIDEO MODAL -->
+<div class="modal-ov hidden" id="vmodal">
+  <div class="modal">
+    <button class="mcls" onclick="closeModal()">✕</button>
+    <div style="font-family:'Bebas Neue';font-size:1.3rem;color:var(--red);margin-bottom:2px;">🎬 Video Çek</div>
+    <div style="font-size:.68rem;color:var(--muted);margin-bottom:13px;">Her seçim kazancını etkiler!</div>
+    <div class="msteps" id="msteps"></div>
+    <div id="step-0" class="step-p active"></div>
+    <div id="step-1" class="step-p"></div>
+    <div id="step-2" class="step-p"></div>
+    <div id="step-3" class="step-p"></div>
+    <div class="mfooter">
+      <button class="mbk hidden" id="mbk" onclick="mBack()">← Geri</button>
+      <button class="mnx" id="mnx" onclick="mNext()">Devam →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- LOGIN SCREEN -->
+<div class="login-screen hidden" id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">📺 You<span>Tuber</span></div>
+    <div class="login-sub" id="login-sub">Oynamak için giriş yap veya kayıt ol</div>
+    <div class="login-tabs">
+      <div class="login-tab active" id="ltab-login" onclick="switchLoginTab('login')"><span id="lt-login-txt">Giriş Yap</span></div>
+      <div class="login-tab" id="ltab-register" onclick="switchLoginTab('register')"><span id="lt-reg-txt">Kayıt Ol</span></div>
+    </div>
+    <div class="login-err" id="login-err"></div>
+    <input class="dinput" id="li-user" type="text" placeholder="Kullanıcı adı" maxlength="20" autocomplete="off"/>
+    <input class="dinput" id="li-gmail" type="email" placeholder="Gmail adresi" style="display:none" autocomplete="email"/>
+    <input class="dinput" id="li-pass" type="password" placeholder="Şifre" maxlength="30"/>
+    <button class="dbtn primary" id="li-btn" onclick="doLogin()"><span id="li-btn-txt">Giriş Yap</span></button>
+    <button class="dbtn secondary" id="li-guest-btn" onclick="playAsGuest()"><span id="li-guest-txt">Misafir Olarak Oyna</span></button>
+  </div>
+</div>
+
+<!-- DRAWER OVERLAY -->
+<div class="drawer-ov" id="drawer-ov" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3><span id="d-menu-title">⚙️ Menü</span></h3>
+    <button class="dcls" onclick="closeDrawer()">✕</button>
+  </div>
+
+  <!-- USER SECTION -->
+  <div class="drawer-section" id="drawer-user-sec">
+    <h4 id="d-acc-title">Hesap</h4>
+    <div class="drawer-user" id="drawer-user-info" style="display:none">
+      <div class="drawer-ava" id="d-ava">🎬</div>
+      <div>
+        <div class="drawer-uname" id="d-uname">—</div>
+        <div class="drawer-ustats" id="d-ustats">—</div>
+      </div>
+    </div>
+    <div id="drawer-login-form">
+      <input class="dinput" id="d-user" type="text" placeholder="Kullanıcı adı" maxlength="20"/>
+      <input class="dinput" id="d-pass" type="password" placeholder="Şifre" maxlength="30"/>
+      <button class="dbtn primary" id="d-login-btn" onclick="doDrawerLogin()"><span id="d-login-txt">Giriş Yap</span></button>
+      <button class="dbtn secondary" id="d-reg-btn" onclick="doDrawerRegister()"><span id="d-reg-txt">Kayıt Ol</span></button>
+    </div>
+    <div id="drawer-logout-sec" style="display:none">
+      <button class="dbtn danger" id="d-logout-btn" onclick="doLogout()"><span id="d-logout-txt">Çıkış Yap</span></button>
+    </div>
+  </div>
+
+  <!-- LEADERBOARD -->
+  <div class="drawer-section" style="padding-bottom:0;border-bottom:none;">
+    <h4 id="d-lb-title">🏆 Global Sıralama</h4>
+    <div class="lb-tabs">
+      <div class="lb-tab active" id="lbt-subs" onclick="switchLbTab('subs')"><span id="lbt-subs-txt">👥 Abone</span></div>
+      <div class="lb-tab" id="lbt-money" onclick="switchLbTab('money')"><span id="lbt-money-txt">💰 Para</span></div>
+    </div>
+  </div>
+  <div style="flex:1;overflow-y:auto;padding:0 16px 16px;">
+    <div id="lb-list" class="lb-list"><div class="lb-loading">Yükleniyor...</div></div>
+  </div>
+
+  <!-- DİL SEÇİMİ -->
+  <div class="drawer-section" style="margin-top:auto;flex-shrink:0;">
+    <h4 id="d-lang-title">🌍 Oyun Dili</h4>
+    <div class="lang-grid" id="lang-grid"></div>
+  </div>
+</div>
+
+
+<!-- KRİZ ANLARI POPUP -->
+<div class="crisis-popup hidden" id="crisis-popup">
+  <div class="crisis-box">
+    <div class="crisis-type" id="crisis-type">KRİZ</div>
+    <span class="crisis-icon" id="crisis-icon">⚠️</span>
+    <div class="crisis-title" id="crisis-title">Başlık</div>
+    <div class="crisis-desc" id="crisis-desc">Açıklama</div>
+    <div class="crisis-choices" id="crisis-choices"></div>
+  </div>
+</div>
+
+<!-- RASTGELE OLAY POPUP -->
+<div class="event-popup hidden" id="event-popup">
+  <div class="event-box">
+    <span class="ev-ic" id="ev-ic">⚡</span>
+    <div class="ev-type" id="ev-type">OLAY</div>
+    <div class="ev-title" id="ev-title">Başlık</div>
+    <div class="ev-desc" id="ev-desc">Açıklama</div>
+    <div class="ev-effect" id="ev-effect">etki</div>
+    <button class="event-btn" onclick="closeEvent()">Tamam!</button>
+  </div>
+</div>
+<div id="toast-c"></div>
+
+<script>
+// ─────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────
+let S={
+  subs:0,money:0,views:0,videos:0,xp:0,level:0,
+  day:1,season:0,todayVids:0,dailyGoal:3,
+  equipment:{},owned:[],
+  videoFeed:[],rivals:[],
+  avid:{collab:0,trend:0,sponsored:0},
+  aday:{stream:0,partner:0},
+  earnedBadges:[],
+  lastEventDay:0,
+  studioLevel:0,
+  viralCount:0, eventCount:0,
+  loyalty:0,         // izleyici bağlılık puanı
+  loyalFans:0,       // sadık hayran sayısı
+  comments:[],       // son gelen yorumlar
+  categoryStats:{},  // kategori bazlı video/abone istatistiği
+  tourneyWeek:0,
+  tourneyScore:0,
+  quests:[],          // günlük görevler
+  questDay:0,         // son görev günü
+  questsDone:0,       // toplam tamamlanan görev
+};
+
+const LEVELS=[
+  {xp:150,name:'🌱 Çaylak Creator',av:'🎬'},
+  {xp:400,name:'⚡ Yükselen Yıldız',av:'🌟'},
+  {xp:900,name:'🔥 Fenomen Adayı',av:'🔥'},
+  {xp:2000,name:'👑 İçerik Kralı',av:'👑'},
+  {xp:4500,name:'💎 Efsane YouTuber',av:'💎'},
+  {xp:Infinity,name:'🚀 YouTube İkonu',av:'🚀'},
+];
+const SEASONS=[
+  {name:'İlkbahar',ic:'🌸',vm:1.0},
+  {name:'Yaz',ic:'☀️',vm:1.15},
+  {name:'Sonbahar',ic:'🍂',vm:0.95},
+  {name:'Kış',ic:'❄️',vm:0.9},
+];
+
+// ─────────────────────────────────────────
+// SHOP DATA
+// ─────────────────────────────────────────
+const SCATS=[
+  {id:'phone',name:'📱 Telefon'},
+  {id:'camera',name:'📷 Kamera'},
+  {id:'pc',name:'🖥️ Bilgisayar'},
+  {id:'monitor',name:'🖵 Monitör'},
+  {id:'audio',name:'🎙️ Ses'},
+  {id:'lights',name:'💡 Işık'},
+  {id:'other',name:'🎒 Aksesuar'},
+];
+
+const ITEMS=[
+  // TELEFON (subM,monM,viewM tüm ürün için çarpan)
+  {id:'ph1',cat:'phone',name:'Eski Telefon',ic:'📱',tier:1,price:0,   subM:1.00,monM:1.00,viewM:1.00,d:'Başlangıç'},
+  {id:'ph2',cat:'phone',name:'Orta Segment',ic:'📱',tier:2,price:700, subM:1.12,monM:1.10,viewM:1.08,d:'+12% kazanım'},
+  {id:'ph3',cat:'phone',name:'iPhone SE',   ic:'📱',tier:3,price:2200,subM:1.22,monM:1.20,viewM:1.15,d:'+22% kazanım'},
+  {id:'ph4',cat:'phone',name:'Samsung S22', ic:'📱',tier:4,price:5000,subM:1.35,monM:1.32,viewM:1.25,d:'+35% kazanım'},
+  {id:'ph5',cat:'phone',name:'iPhone 14 Pro',ic:'📱',tier:5,price:10000,subM:1.50,monM:1.45,viewM:1.38,d:'+50% kazanım'},
+  {id:'ph6',cat:'phone',name:'Galaxy S24 Ultra',ic:'📱',tier:6,price:20000,subM:1.65,monM:1.60,viewM:1.52,d:'+65% kazanım'},
+  {id:'ph7',cat:'phone',name:'iPhone 16 Pro Max',ic:'📱',tier:7,price:40000,subM:1.85,monM:1.80,viewM:1.72,d:'+85% kazanım'},
+  // KAMERA
+  {id:'cm1',cat:'camera',name:'Webcam',    ic:'📷',tier:1,price:0,   subM:1.00,monM:1.00,viewM:1.00,d:'Başlangıç'},
+  {id:'cm2',cat:'camera',name:'Aksiyon Kamera',ic:'📷',tier:2,price:1400,subM:1.10,monM:1.14,viewM:1.22,d:'+22% izlenme'},
+  {id:'cm3',cat:'camera',name:'Mirrorless Giriş',ic:'📷',tier:3,price:4500,subM:1.20,monM:1.24,viewM:1.38,d:'+38% izlenme'},
+  {id:'cm4',cat:'camera',name:'Sony ZV-E10',ic:'📷',tier:4,price:9500,subM:1.32,monM:1.35,viewM:1.55,d:'+55% izlenme'},
+  {id:'cm5',cat:'camera',name:'Canon EOS R50',ic:'📷',tier:5,price:19000,subM:1.44,monM:1.46,viewM:1.72,d:'+72% izlenme'},
+  {id:'cm6',cat:'camera',name:'Sony A7 IV',ic:'📷',tier:6,price:38000,subM:1.58,monM:1.58,viewM:1.92,d:'+92% izlenme'},
+  // BİLGİSAYAR
+  {id:'pc1',cat:'pc',name:'Eski Laptop',   ic:'💻',tier:1,price:0,   subM:1.00,monM:1.00,viewM:1.00,d:'Başlangıç'},
+  {id:'pc2',cat:'pc',name:'Orta Laptop',   ic:'💻',tier:2,price:3000,subM:1.08,monM:1.16,viewM:1.10,d:'+16% para'},
+  {id:'pc3',cat:'pc',name:'Gaming Laptop', ic:'💻',tier:3,price:8000,subM:1.16,monM:1.30,viewM:1.20,d:'+30% para'},
+  {id:'pc4',cat:'pc',name:'Masaüstü PC',   ic:'🖥️',tier:4,price:16000,subM:1.24,monM:1.46,viewM:1.30,d:'+46% para'},
+  {id:'pc5',cat:'pc',name:'Gaming PC RTX', ic:'🖥️',tier:5,price:32000,subM:1.34,monM:1.62,viewM:1.42,d:'+62% para'},
+  {id:'pc6',cat:'pc',name:'Pro PC RTX 4090',ic:'🖥️',tier:6,price:65000,subM:1.46,monM:1.82,viewM:1.58,d:'+82% para'},
+  // MONİTÖR
+  {id:'mn1',cat:'monitor',name:'Eski Ekran', ic:'🖵',tier:1,price:0,   subM:1.00,monM:1.00,viewM:1.00,d:'Başlangıç'},
+  {id:'mn2',cat:'monitor',name:'Full HD 24"',ic:'🖵',tier:2,price:1100,subM:1.05,monM:1.08,viewM:1.12,d:'+12% izlenme'},
+  {id:'mn3',cat:'monitor',name:'QHD 27"',   ic:'🖵',tier:3,price:3200,subM:1.10,monM:1.16,viewM:1.26,d:'+26% izlenme'},
+  {id:'mn4',cat:'monitor',name:'4K 32"',    ic:'🖵',tier:4,price:7500,subM:1.18,monM:1.24,viewM:1.42,d:'+42% izlenme'},
+  {id:'mn5',cat:'monitor',name:'OLED 4K',   ic:'🖵',tier:5,price:16000,subM:1.28,monM:1.34,viewM:1.60,d:'+60% izlenme'},
+  // SES
+  {id:'au1',cat:'audio',name:'Laptop Mik', ic:'🎙️',tier:1,price:0,   subM:1.00,monM:1.00,viewM:1.00,d:'Başlangıç'},
+  {id:'au2',cat:'audio',name:'USB Mikrofon',ic:'🎙️',tier:2,price:550,subM:1.10,monM:1.10,viewM:1.06,d:'+10% abone'},
+  {id:'au3',cat:'audio',name:'Kondenser',  ic:'🎙️',tier:3,price:2000,subM:1.22,monM:1.22,viewM:1.14,d:'+22% abone'},
+  {id:'au4',cat:'audio',name:'Pro Mikrofon',ic:'🎙️',tier:4,price:5500,subM:1.36,monM:1.34,viewM:1.24,d:'+36% abone'},
+  {id:'au5',cat:'audio',name:'Stüdyo Ses Set',ic:'🎚️',tier:5,price:13000,subM:1.52,monM:1.48,viewM:1.36,d:'+52% abone'},
+  // IŞIK
+  {id:'li1',cat:'lights',name:'Doğal Işık',ic:'🌞',tier:1,price:0,  subM:1.00,monM:1.00,viewM:1.00,d:'Başlangıç'},
+  {id:'li2',cat:'lights',name:'Ring Işık', ic:'💡',tier:2,price:450,subM:1.07,monM:1.12,viewM:1.09,d:'+12% para'},
+  {id:'li3',cat:'lights',name:'Softbox Set',ic:'💡',tier:3,price:1800,subM:1.16,monM:1.24,viewM:1.20,d:'+24% para'},
+  {id:'li4',cat:'lights',name:'Stüdyo Işık',ic:'🔦',tier:4,price:5000,subM:1.28,monM:1.38,viewM:1.32,d:'+38% para'},
+  // AKSESUAR
+  {id:'ot1',cat:'other',name:'Tripod',     ic:'🎯',tier:2,price:280, subM:1.06,monM:1.06,viewM:1.06,d:'Tüm +6%'},
+  {id:'ot2',cat:'other',name:'Green Screen',ic:'🟩',tier:3,price:900,subM:1.14,monM:1.14,viewM:1.16,d:'Tüm +14%'},
+  {id:'ot3',cat:'other',name:'Drone',      ic:'🚁',tier:4,price:6000,subM:1.22,monM:1.20,viewM:1.28,d:'Tüm +22%'},
+  {id:'ot4',cat:'other',name:'Stüdyo Setup',ic:'🏠',tier:5,price:28000,subM:1.40,monM:1.40,viewM:1.40,d:'Tüm +40%'},
+];
+
+
+// ═══════════════════════════════════════════
+// STÜDYO SİSTEMİ
+// ═══════════════════════════════════════════
+const STUDIOS = [
+  {
+    id:0, name:'Kiralık Oda', emoji:'🛏️',
+    desc:'Küçük bir kiralık oda. Ses yalıtımı yok, ışık kötü ama bir başlangıç.',
+    color:'#888', subM:1.0, monM:1.0, viewM:1.0,
+    price:0, reqSubs:0,
+    bonuses:['Başlangıç stüdyosu'],
+    items:['Küçük masa','Eski sandalye','Tek pencere'],
+  },
+  {
+    id:1, name:'Ev Stüdyosu', emoji:'🏠',
+    desc:'Evinin bir odasını stüdyoya çevirdin. Temel ekipmanlar kurulu, çok daha iyi!',
+    color:'#00b0ff', subM:1.18, monM:1.20, viewM:1.18,
+    price:5000, reqSubs:500,
+    bonuses:['+18% Abone', '+20% Para', '+18% İzlenme'],
+    items:['Ses panelleri','İki ring ışık','Düzenli masa kurulumu'],
+  },
+  {
+    id:2, name:'Profesyonel Stüdyo', emoji:'🎬',
+    desc:'Kiraladığın profesyonel bir çekim stüdyosu. İzleyiciler farkı hemen hissediyor.',
+    color:'#00e676', subM:1.40, monM:1.45, viewM:1.42,
+    price:25000, reqSubs:5000,
+    bonuses:['+40% Abone', '+45% Para', '+42% İzlenme'],
+    items:['Özel green screen','Üç nokta ışıklama','Profesyonel ses kabini'],
+  },
+  {
+    id:3, name:'YouTube Ofisi', emoji:'🏢',
+    desc:'Kendi ofisini kiraladın. Tam ekip çalışması, günde birden fazla içerik üretebiliyorsun.',
+    color:'#ffd700', subM:1.70, monM:1.75, viewM:1.68,
+    price:100000, reqSubs:50000,
+    bonuses:['+70% Abone', '+75% Para', '+68% İzlenme', 'Günlük limit +1'],
+    items:['Tam ekip stüdyosu','4K çekim odası','Editing odası','Toplantı salonu'],
+    dailyBonus:1,
+  },
+  {
+    id:4, name:'Medya Şirketi', emoji:'🏙️',
+    desc:'Kendi medya şirketini kuruyorsun. Yönettiğin bir ekip var, içerik fabrikası gibi çalışıyorsun.',
+    color:'#ff9800', subM:2.10, monM:2.20, viewM:2.05,
+    price:500000, reqSubs:250000,
+    bonuses:['+110% Abone', '+120% Para', '+105% İzlenme', 'Günlük limit +2'],
+    items:['Birden fazla çekim seti','Post-prodüksiyon ekibi','Sosyal medya yöneticisi','PR ekibi'],
+    dailyBonus:2,
+  },
+  {
+    id:5, name:'Yapım Şirketi', emoji:'🌟',
+    desc:'Dev bir yapım şirketi! Türkiye\u2019nin en büyük dijital içerik üretim merkezi.',
+    color:'#ff4444', subM:2.80, monM:3.00, viewM:2.75,
+    price:2000000, reqSubs:1000000,
+    bonuses:['+180% Abone', '+200% Para', '+175% İzlenme', 'Günlük limit +3'],
+    items:['5 farklı stüdyo seti','50+ kişilik ekip','Yayın odası','Kafeterya & dinlenme'],
+    dailyBonus:3,
+  },
+];
+
+function getStudio(){ return STUDIOS[S.studioLevel]||STUDIOS[0]; }
+function getNextStudio(){ return STUDIOS[S.studioLevel+1]||null; }
+
+function studioMult(k){
+  // tMult'a ek olarak studio çarpanı eklenir
+  const st=getStudio();
+  return st[k]||1.0;
+}
+
+function upgradeStudio(){
+  const next=getNextStudio();
+  if(!next) return;
+  if(S.money<next.price){ toast('Yetersiz para! ₺'+fmt(next.price)+' gerekli.','❌'); return; }
+  if(S.subs<next.reqSubs){ toast(fmt(next.reqSubs)+' abone gerekli!','❌'); return; }
+  S.money-=next.price;
+  S.studioLevel++;
+  const st=getStudio();
+  // dailyGoal artırımı
+  if(st.dailyBonus) S.dailyGoal=3+st.dailyBonus;
+  sfxStudioUp(); vfxConfetti(); floatn('🏠 '+st.emoji+' '+st.name+' açıldı!');
+  toast(st.name+' stüdyona taşındın! Tüm kazanımlar arttı.','🏠');
+  renderStudioPanel();
+  updateUI();
+  checkBadges();
+  // Badge için studio rozeti
+  if(S.studioLevel>=5) setTimeout(()=>{
+    floatn('🌟 YAPIM ŞİRKETİ! Efsane oldun!');
+  },600);
+}
+
+function renderStudioPanel(){
+  const el=document.getElementById('studio-panel');
+  if(!el) return;
+  const cur=getStudio();
+  const next=getNextStudio();
+
+  // Güncel stüdyo
+  let html=`
+  <div class="studio-card">
+    <div class="studio-visual">
+      <div class="sv-bg">${cur.emoji}</div>
+      <div class="sv-main">${cur.emoji}</div>
+      <div class="sv-label">${cur.name.toUpperCase()}</div>
+    </div>
+    <div class="studio-info">
+      <div>
+        <div class="studio-name">${cur.name}</div>
+        <div class="studio-tier" style="color:${cur.color}">SEVİYE ${cur.id+1}/6 ${cur.id===5?'• MAKSİMUM':''}</div>
+      </div>
+    </div>
+    <div style="font-size:.75rem;color:#888;margin-bottom:10px;line-height:1.5;">${cur.desc}</div>
+    <div class="studio-bonuses">
+      ${cur.bonuses.map(b=>`<span class="studio-bonus-tag" style="color:${cur.color};border-color:${cur.color}44;">${b}</span>`).join('')}
+    </div>
+    <div style="font-size:.68rem;color:#555;margin-bottom:12px;">
+      <b style="color:#666;">Stüdyoda:</b> ${cur.items.join(' • ')}
+    </div>`;
+
+  if(next){
+    const canAfford=S.money>=next.price;
+    const canSubs=S.subs>=next.reqSubs;
+    const canBuy=canAfford&&canSubs;
+    html+=`
+    <button class="studio-upgrade-btn" onclick="upgradeStudio()" ${canBuy?'':'disabled'}>
+      ${next.emoji} ${next.name} → ₺${fmt(next.price)}
+    </button>
+    <div class="studio-next-info">
+      ${!canSubs?`<span style="color:#ff6b6b;">⚠ ${fmt(next.reqSubs)} abone gerekli (${fmt(S.subs)} mevcut)</span><br>`:''}
+      ${!canAfford?`<span style="color:#ff6b6b;">⚠ ₺${fmt(next.price-S.money)} daha gerekli</span><br>`:''}
+      Sonraki stüdyo: <b style="color:${next.color}">${next.name}</b> — ${next.bonuses.join(', ')}
+    </div>`;
+  } else {
+    html+=`<div class="studio-max">🌟 Maksimum Stüdyoya Ulaştın!</div>`;
+  }
+  html+=`</div>`;
+
+  // Tüm stüdyo yol haritası
+  html+=`<div class="stitle" style="margin-top:16px;">🗺️ Stüdyo Yol Haritası</div>`;
+  html+=`<div style="display:flex;flex-direction:column;gap:8px;">`;
+  STUDIOS.forEach((st,i)=>{
+    const done=i<S.studioLevel;
+    const active=i===S.studioLevel;
+    const locked=i>S.studioLevel;
+    html+=`<div style="
+      display:flex;align-items:center;gap:10px;padding:10px 12px;
+      border-radius:11px;border:1.5px solid ${active?st.color:done?'#2a3a2a':locked?'#1a1a28':'#222'};
+      background:${active?st.color+'12':done?'#0a140a':locked?'#0e0e18':'#111'};
+    ">
+      <div style="font-size:1.5rem;flex-shrink:0;">${done?'✅':active?st.emoji:'🔒'}</div>
+      <div style="flex:1;">
+        <div style="font-weight:900;font-size:.82rem;color:${active?st.color:done?'#5a9a5a':locked?'#444':'#fff'}">
+          ${st.name} ${active?'← Şu an':''}
+        </div>
+        <div style="font-size:.64rem;color:#555;margin-top:1px;">${st.price===0?'Ücretsiz':'₺'+fmt(st.price)} • ${st.reqSubs===0?'Başlangıç':fmt(st.reqSubs)+' abone'}</div>
+      </div>
+      <div style="font-size:.62rem;font-weight:700;color:${st.color};text-align:right;">${st.bonuses[0]}</div>
+    </div>`;
+  });
+  html+=`</div>`;
+  el.innerHTML=html;
+
+  // Stüdyo badge'i güncelle
+  const sb=document.getElementById('studio-badge-txt');
+  if(sb) sb.textContent=cur.emoji+' '+cur.name;
+}
+
+function switchShopMainTab(tab){
+  document.getElementById('shop-equip-panel').style.display=tab==='equip'?'block':'none';
+  document.getElementById('shop-studio-panel').style.display=tab==='studio'?'block':'none';
+  document.getElementById('shop-tab-equip').classList.toggle('active',tab==='equip');
+  document.getElementById('shop-tab-studio').classList.toggle('active',tab==='studio');
+  if(tab==='studio') renderStudioPanel();
+}
+
+// ─────────────────────────────────────────
+// RIVALS
+// ─────────────────────────────────────────
+const RIVAL_DEFS=[
+  {name:'MiniGamer',   ic:'🎮',color:'#ff6b6b',gpd:35,   start:5000},
+  {name:'EvdeYemek',   ic:'🍕',color:'#ffd700',gpd:25,   start:8000},
+  {name:'TeknoBlog',   ic:'💻',color:'#00b0ff',gpd:45,   start:12000},
+  {name:'GülümseAl',   ic:'🤣',color:'#00e676',gpd:55,   start:7000},
+  {name:'MüziklerTR',  ic:'🎵',color:'#b388ff',gpd:200,  start:55000},
+  {name:'GezginAyşe',  ic:'✈️',color:'#ff9800',gpd:150,  start:80000},
+  {name:'FitnessKral', ic:'🏋️',color:'#e91e63',gpd:300,  start:120000},
+  {name:'ASMRDünya',   ic:'🎧',color:'#26c6da',gpd:100,  start:250000},
+  {name:'TechTürkiye', ic:'🖥️',color:'#00b0ff',gpd:800,  start:500000},
+  {name:'YemekUstası', ic:'🍳',color:'#ff9800',gpd:600,  start:900000},
+  {name:'GameMaster',  ic:'🕹️',color:'#ff6b6b',gpd:1200, start:2000000},
+  {name:'VlogQueen',   ic:'👑',color:'#ffd700',gpd:900,  start:4500000},
+  {name:'BarışTV',     ic:'🌟',color:'#ffd700',gpd:5000, start:10000000},
+  {name:'TürkiyeViral',ic:'🔥',color:'#ff4500',gpd:8000, start:25000000},
+  {name:'MegaContent', ic:'💎',color:'#b388ff',gpd:12000,start:60000000},
+  {name:'UltraTR',     ic:'🚀',color:'#00e676',gpd:18000,start:100000000},
+];
+
+// ─────────────────────────────────────────
+// VIDEO DATA
+// ─────────────────────────────────────────
+const VID_CATS=[
+  {id:'gaming',name:'Gaming',ic:'🎮',sm:1.2,req:0},
+  {id:'vlog',name:'Vlog',ic:'📹',sm:1.0,req:0},
+  {id:'yemek',name:'Yemek',ic:'🍕',sm:1.1,req:0},
+  {id:'komedi',name:'Komedi',ic:'🤣',sm:1.3,req:0},
+  {id:'muzik',name:'Müzik',ic:'🎵',sm:1.15,req:50},
+  {id:'tech',name:'Teknoloji',ic:'💻',sm:1.25,req:0},
+  {id:'spor',name:'Spor',ic:'🏋️',sm:1.1,req:0},
+  {id:'gezi',name:'Gezi',ic:'✈️',sm:1.2,req:100},
+  {id:'egitim',name:'Eğitim',ic:'📚',sm:1.15,req:0},
+  {id:'challenge',name:'Challenge',ic:'🏆',sm:1.35,req:200},
+  {id:'mukbang',name:'Mukbang',ic:'🍜',sm:1.1,req:0},
+  {id:'asmr',name:'ASMR',ic:'🎧',sm:1.05,req:0},
+];
+const VID_STYLES=[
+  {id:'cb',name:'Clickbait',ic:'😱',sm:1.5,mm:1.4,vm:1.6,d:'Yüksek tıklanma'},
+  {id:'bl',name:'Bilgi',ic:'📊',sm:1.1,mm:1.1,vm:1.0,d:'Güvenilir büyüme'},
+  {id:'hk',name:'Hikaye',ic:'📖',sm:1.3,mm:1.2,vm:1.2,d:'Bağlılık yüksek'},
+  {id:'li',name:'Top 10',ic:'🔢',sm:1.2,mm:1.15,vm:1.3,d:'SEO dostu'},
+  {id:'sq',name:'Soru',ic:'❓',sm:1.15,mm:1.05,vm:1.1,d:'Merak uyandırır'},
+  {id:'sm',name:'Samimi',ic:'💬',sm:1.25,mm:1.0,vm:0.9,d:'Topluluk bağı'},
+];
+const VID_DURS=[
+  {id:'sh',name:'Short',ic:'⚡',sub:'<1dk', xm:0.5,mm:0.8,sm:0.9,vm:1.6},
+  {id:'md',name:'Orta',ic:'▶️',sub:'5-10dk',xm:1.0,mm:1.0,sm:1.0,vm:1.0},
+  {id:'lo',name:'Uzun',ic:'🎬',sub:'15-30dk',xm:1.4,mm:1.4,sm:1.2,vm:0.8},
+  {id:'mg',name:'Mega',ic:'🎞️',sub:'60+dk',  xm:1.8,mm:1.8,sm:1.1,vm:0.6},
+];
+const VID_QUALS=[
+  {id:'360',name:'360p',ic:'📱',sub:'Düşük',mm:0.7,sm:0.8,reqCat:'phone',reqTier:1},
+  {id:'720',name:'720p',ic:'🖥️',sub:'HD',    mm:1.0,sm:1.0,reqCat:'phone',reqTier:1},
+  {id:'1080',name:'1080p',ic:'📺',sub:'FHD', mm:1.3,sm:1.18,reqCat:'camera',reqTier:2},
+  {id:'4k',name:'4K',ic:'✨',sub:'UHD',       mm:1.6,sm:1.35,reqCat:'camera',reqTier:3},
+];
+const TITLES={
+  gaming:['Bu oyunu 24 saat oynadım!','Kimse bu hilelerden haberdar değil!','Son boss 1 hamlede!','Yeni güncelleme her şeyi değiştirdi!'],
+  vlog:['Evimden çıkmadan 1 hafta!','Şehirde en ucuz yerler','Sabah 4\'te uyandım!','1 günlük hayatım'],
+  yemek:['3 malzemeyle bu yemeği yaptım!','Gizli tarif öğrendim!','10 dakikada akşam yemeği!'],
+  komedi:['Arkadaşıma şaka yaptım!','Sosyal deney: şarkı söyledim','İnsanların tepkileri inanılmaz!'],
+  muzik:['10 tarzda söyledim','Beklenmedik cover!','İlk bestemi paylaşıyorum'],
+  tech:['30 gün kullandım!','Bunu ALMAYIN','Gizli özellikler','Fiyatına değer mi?'],
+  spor:['30 günde bu kadar değiştim!','Profesyonel programı denedim','Bu egzersiz her şeyi değiştirir'],
+  gezi:['Türkiye\'nin bilinmeyen köşeleri','500₺ ile 3 günlük tatil!','Bu yeri kimse bilmiyor'],
+  egitim:['Kimse düzgün anlatmamış','10 dakikada anlayacaksın','Bunu bilseydim keşke'],
+  challenge:['24 saat fast food yedim','1 hafta telefonsuz yaşadım','48 saat uyumadım!'],
+  mukbang:['Dev porsiyon — hepsini bitirdim!','Türkiye\'nin en büyük menüsü','Gece yarısı 5 çeşit yemek'],
+  asmr:['Yağmur sesinde 1 saat','Fısıltı ile uyku testi','Doğa sesleri — tam rahatlama'],
+};
+
+// ─────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────
+const fmt=n=>n>=1e6?(n/1e6).toFixed(1)+'M':n>=1000?(n/1000).toFixed(1)+'K':String(n);
+const rand=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+
+function eqItem(catId){
+  const id=S.equipment[catId];
+  return id?ITEMS.find(i=>i.id===id):null;
+}
+function eqTier(catId){ return (eqItem(catId)||{tier:1}).tier; }
+
+function tMult(k){ // k = subM / monM / viewM
+  let m=1;
+  SCATS.forEach(c=>{const it=eqItem(c.id);if(it)m*=(it[k]||1);});
+  // Stüdyo çarpanı
+  const st=STUDIOS[S.studioLevel||0];
+  if(st) m*=(st[k]||1.0);
+  return m;
+}
+
+function addSubs(n){
+  const v=Math.max(0,Math.floor(n*tMult('subM'))); S.subs+=v;
+  if(v>0){
+    sfxSubscribe();
+    vfxStatBounce('hd-subs','sub-pulse');
+    vfxStatBounce('st-subs','sub-bounce');
+    const ms=[100,1000,10000,100000,1000000,10000000];
+    if(ms.some(m=>S.subs>=m&&S.subs-v<m)) vfxConfetti();
+  }
+  return v;
+}
+function addMoney(n){
+  const v=Math.max(0,Math.floor(n*tMult('monM'))); S.money+=v;
+  if(v>0){
+    sfxMoney();
+    vfxStatBounce('st-mon','money-shine');
+    vfxStatBounce('hd-money','money-shine');
+    if(v>=100) vfxMoneyFly(v);
+  }
+  return v;
+}
+function addViews(n){ const v=Math.max(0,Math.floor(n*tMult('viewM'))); S.views+=v; return v; }
+function addXP(n){
+  S.xp+=Math.floor(n);
+  const lvl=LEVELS[S.level];
+  if(S.xp>=(lvl.xp===Infinity?Infinity:lvl.xp)&&S.level<LEVELS.length-1){
+    S.level++;
+    sfxLevelUp(); vfxConfetti(); floatn('🎉 Seviye Atladı! '+LEVELS[S.level].name);
+    toast('Yeni seviye: '+LEVELS[S.level].name,'🏆');
+  }
+}
+
+// ─────────────────────────────────────────
+// UI UPDATE
+// ─────────────────────────────────────────
+function updateUI(){
+  document.getElementById('hd-subs').textContent=fmt(S.subs);
+  document.getElementById('hd-money').textContent=fmt(S.money);
+  document.getElementById('hd-day').textContent='Gün '+S.day;
+  document.getElementById('st-subs').textContent=fmt(S.subs);
+  document.getElementById('st-mon').textContent='₺'+fmt(S.money);
+  document.getElementById('st-views').textContent=fmt(S.views);
+  document.getElementById('st-vids').textContent=S.videos;
+  updateBadge(); updateMilestones(); updateXP(); updateActionBtns(); updateRivalsUI(); checkBadges();
+}
+
+function updateXP(){
+  const prevXP=S.level>0?LEVELS[S.level-1].xp:0;
+  const lvl=LEVELS[S.level];
+  const max=lvl.xp===Infinity?S.xp+500:lvl.xp;
+  const pct=Math.min(100,((S.xp-prevXP)/(max-prevXP))*100);
+  document.getElementById('xpfill').style.width=pct+'%';
+  document.getElementById('lvlname').textContent=LEVELS[S.level].name;
+  document.getElementById('lvlxp').textContent=S.xp+'/'+(lvl.xp===Infinity?'∞':lvl.xp)+' XP';
+  document.getElementById('avatar').textContent=LEVELS[S.level].av;
+}
+
+function updateBadge(){
+  const b=document.getElementById('ch-badge');
+  if(S.subs>=1e6){b.className='badge diamond';b.textContent='💎 Diamond';}
+  else if(S.subs>=100000){b.className='badge ruby';b.textContent='🔴 100K';}
+  else if(S.subs>=10000){b.className='badge gold-b';b.textContent='🥇 10K';}
+  else if(S.subs>=1000){b.className='badge silver';b.textContent='🥈 1K';}
+  else{b.className='badge new-b';b.textContent='🌱 Yeni';}
+}
+
+const MILESTONES=[
+  {lb:'100 Abone',ic:'🌱',n:100,t:'subs'},{lb:'1K Abone',ic:'⭐',n:1000,t:'subs'},
+  {lb:'10K Abone',ic:'🥈',n:10000,t:'subs'},{lb:'100K Abone',ic:'🥇',n:100000,t:'subs'},
+  {lb:'1M Abone',ic:'💎',n:1e6,t:'subs'},
+  {lb:'₺10K',ic:'💰',n:10000,t:'money'},{lb:'₺100K',ic:'💸',n:100000,t:'money'},
+  {lb:'50 Video',ic:'🎬',n:50,t:'videos'},{lb:'100 Video',ic:'🎞️',n:100,t:'videos'},
+];
+function updateMilestones(){
+  document.getElementById('msrow').innerHTML=MILESTONES.map(m=>{
+    const v=m.t==='subs'?S.subs:m.t==='money'?S.money:S.videos;
+    return `<div class="ms ${v>=m.n?'done':''}"><div class="mi">${m.ic}</div><div class="ml">${m.lb}</div></div>`;
+  }).join('');
+}
+
+// ─────────────────────────────────────────
+// DAY SYSTEM
+// ─────────────────────────────────────────
+function updateDayBanner(){
+  const s=SEASONS[S.season];
+  const seasonName=t(SEASON_KEYS[S.season])||s.name;
+  const dayTxt=t('day_txt')||'Gün';
+  const dayLbl=document.getElementById('day-lbl');
+  if(dayLbl) dayLbl.textContent=dayTxt+' '+S.day+' — '+seasonName;
+  const daySub=document.getElementById('day-sub');
+  if(daySub) daySub.textContent=t('daily_goal')+': '+S.dailyGoal+' '+t('videos_txt');
+  const si=document.getElementById('season-ic');
+  if(si) si.textContent=s.ic;
+  const q=document.getElementById('dquota');
+  if(q){q.textContent='📹 '+S.todayVids+'/'+S.dailyGoal+' '+t('videos_txt');q.className='dquota'+(S.todayVids>=S.dailyGoal?' done':'');}
+  const hd=document.getElementById('hd-day');
+  if(hd) hd.textContent=dayTxt+' '+S.day;
+}
+
+function nextDay(){
+  const passive=Math.floor(S.subs*0.004*tMult('monM'));
+  if(passive>0){ S.money+=passive; toast(`Reklam geliri: +₺${fmt(passive)}`,'💰'); }
+  S.day++; S.todayVids=0;
+  S.season=Math.floor(((S.day-1)/30))%4;
+  S.dailyGoal=3; // sabit günlük limit
+  S.rivals.forEach(r=>{
+    const d=RIVAL_DEFS.find(x=>x.name===r.name);
+    if(d) r.subs+=rand(Math.floor(d.gpd*0.8),Math.floor(d.gpd*1.8));
+  });
+  checkTourneyWeekEnd();
+  checkAndRefreshQuests();
+  updateDayBanner(); updateUI(); checkBadges();
+  sfxNewDay(); toast(`Gün ${S.day} başladı! ${SEASONS[S.season].ic} ${SEASONS[S.season].name}`,'📅');
+  setTimeout(triggerRandomEvent, 1200);
+  setTimeout(triggerCrisis, 2500);
+}
+
+// ─────────────────────────────────────────
+// ACTION GATES
+// ─────────────────────────────────────────
+function canVid(type,cost){ return S.videos>=(S.avid[type]||0)+cost; }
+function canDay(type,days){ return S.day>=(S.aday[type]||0)+days; }
+function vidLeft(type,cost){ return Math.max(0,(S.avid[type]||0)+cost-S.videos); }
+function dayLeft(type,days){ return Math.max(0,(S.aday[type]||0)+days-S.day); }
+
+function updateActionBtns(){
+  // Video butonu güncelle
+  const vbtn=document.getElementById('btn-video');
+  const vac=document.getElementById('ac-video');
+  if(vbtn&&vac){
+    const full=S.todayVids>=S.dailyGoal;
+    vac.textContent=full?'🚫 Limit doldu':'✓ '+S.todayVids+'/'+S.dailyGoal+' video';
+    vac.style.color=full?'#ff6b6b':'var(--green)';
+  }
+  const rules=[
+    {id:'btn-collab', acId:'ac-collab', ok:canVid('collab',5)&&S.subs>=50,
+      msg:()=>S.subs<50?'50 abone gerek':canVid('collab',5)?'✓ Hazır':'📹 '+vidLeft('collab',5)+' video daha'},
+    {id:'btn-trend',  acId:'ac-trend',  ok:canVid('trend',4),
+      msg:()=>canVid('trend',4)?'✓ Hazır':'📹 '+vidLeft('trend',4)+' video daha'},
+    {id:'btn-sponsor',acId:'ac-sponsor',ok:canVid('sponsored',6)&&S.subs>=1000,
+      msg:()=>S.subs<1000?'1K abone gerek':canVid('sponsored',6)?'✓ Hazır':'📹 '+vidLeft('sponsored',6)+' video daha'},
+    {id:'btn-stream', acId:'ac-stream', ok:canDay('stream',3)&&S.subs>=100,
+      msg:()=>S.subs<100?'100 abone gerek':canDay('stream',3)?'✓ Hazır':'📅 '+dayLeft('stream',3)+' gün daha'},
+    {id:'btn-partner',acId:'ac-partner',ok:canDay('partner',7),
+      msg:()=>canDay('partner',7)?'✓ Hazır':'📅 '+dayLeft('partner',7)+' gün daha'},
+  ];
+  rules.forEach(r=>{
+    const btn=document.getElementById(r.id);
+    const ac=document.getElementById(r.acId);
+    if(!btn||!ac) return;
+    const ok=r.ok;
+    btn.disabled=!ok;
+    ac.textContent=r.msg();
+    ac.style.color=ok?'var(--green)':'#ff6b6b';
+  });
+}
+
+// ─────────────────────────────────────────
+// ACTIONS
+// ─────────────────────────────────────────
+function doCollab(){
+  if(!canVid('collab',5)||S.subs<50){toast('Şart sağlanmadı!','❌');return;}
+  S.avid.collab=S.videos;
+  updateQuestProgress('action',1,{action:'collab'});
+  // sadece bizden biraz büyük kanallarla eşleştir, yoksa random
+  const eligible=RIVAL_DEFS.filter(d=>{
+    const rs=S.rivals.find(x=>x.name===d.name);
+    const ps=rs?rs.subs:d.start;
+    return ps>=S.subs*0.5 && ps<=S.subs*10;
+  });
+  const pool=eligible.length?eligible:RIVAL_DEFS.slice(0,4);
+  const r=pool[rand(0,pool.length-1)];
+  // abone: bizim abonemizin %1-3'ü
+  const s=addSubs(Math.max(1,Math.floor(S.subs*rand(1,3)/100)));
+  // para: günlük reklam gelirimizin ~%20'si kadar
+  const m=addMoney(Math.max(5,Math.floor(S.subs*0.003)));
+  addXP(22);
+  floatn('🤝 '+r.ic+' '+r.name+' ile kolabo!');
+  toast(`${r.name} ile kolabo! +${s} abone, +₺${m}`,'🤝');
+  updateUI();
+}
+
+function doStream(){
+  if(!canDay('stream',3)||S.subs<100){toast('Şart sağlanmadı!','❌');return;}
+  S.aday.stream=S.day;
+  updateQuestProgress('action',1,{action:'stream'});
+  // izleyici = abonenin %3-8'i
+  const viewers=Math.max(1,Math.floor(S.subs*rand(3,8)/100));
+  // abone kazanımı: izleyicinin %2-4'ü
+  const s=addSubs(Math.max(1,Math.floor(viewers*rand(2,4)/100)));
+  // para: izleyici başına 0.05-0.15₺ (gerçekçi SuperChat+reklam)
+  const m=addMoney(Math.max(10,Math.floor(viewers*rand(5,15)/100)));
+  addViews(viewers*rand(8,20));
+  addXP(20);
+  toast(`🔴 Canlı yayın! ${viewers} izleyici • +${s} abone, +₺${m}`,'🔴');
+  updateUI();
+}
+
+function doTrend(){
+  if(!canVid('trend',4)){toast(vidLeft('trend',4)+' video daha!','📹');return;}
+  S.avid.trend=S.videos;
+  updateQuestProgress('action',1,{action:'trend'});
+  const luck=Math.random();
+  const hasDrone=Object.values(S.equipment).includes('ot3');
+  if(luck>(hasDrone?0.42:0.58)){
+    if(Math.random()>0.78){
+      // süper viral: abonenin %8-15'i kadar yeni abone, para normal videonun 3x'i
+      const s=addSubs(Math.max(5,Math.floor(S.subs*rand(8,15)/100)));
+      const m=addMoney(Math.max(20,Math.floor(S.subs*0.008)));
+      addXP(40); S.viralCount=(S.viralCount||0)+1; sfxViral(); vfxViral(); floatn('🔥🔥 SÜPER VİRAL! +'+s+' abone!');
+      toast(`Süper viral! +${s} abone, +₺${m}`,'🔥');
+    } else {
+      // normal viral: abonenin %2-6'sı
+      const s=addSubs(Math.max(2,Math.floor(S.subs*rand(2,6)/100)));
+      const m=addMoney(Math.max(10,Math.floor(S.subs*0.004)));
+      addXP(25); S.viralCount=(S.viralCount||0)+1; sfxViral(); vfxViral(); floatn('🔥 VİRAL! +'+s+' abone!');
+      toast(`Trend tuttu! +${s} abone, +₺${m}`,'🔥');
+    }
+  } else {
+    // tutmadı: çok küçük kazanım
+    addSubs(Math.max(0,Math.floor(S.subs*0.001)));
+    addXP(3);
+    toast(['Kimse izlemedi 😶','Algoritma pas geçti 😔','Trend tutmadı...'][rand(0,2)],'😅');
+  }
+  updateUI();
+}
+
+function doPartnerVideo(){
+  if(!canDay('partner',7)){toast(dayLeft('partner',7)+' gün sonra!','📅');return;}
+  S.aday.partner=S.day;
+  updateQuestProgress('action',1,{action:'partner'});
+  // bizimle benzer seviyede biri
+  const eligible=RIVAL_DEFS.filter(d=>{
+    const rs=S.rivals.find(x=>x.name===d.name);
+    const ps=rs?rs.subs:d.start;
+    return ps>=S.subs*0.3 && ps<=S.subs*5;
+  });
+  const pool=eligible.length?eligible:RIVAL_DEFS.slice(0,4);
+  const r=pool[rand(0,pool.length-1)];
+  // partner video: bizim abonemizin %3-8'i kadar yeni abone (her iki kanalın izleyicisi gelir)
+  const s=addSubs(Math.max(2,Math.floor(S.subs*rand(3,8)/100)));
+  // para: normal videonun 1.5x'i kadar (sponsor+reklam)
+  const m=addMoney(Math.max(15,Math.floor(S.subs*0.005)));
+  addXP(35);
+  floatn('🎞️ Ortak video! +'+s+' abone!');
+  toast(`${r.ic} ${r.name} ile ortak video! +${s} abone, +₺${m}`,'🎞️');
+  updateUI();
+}
+
+function doSponsored(){
+  if(!canVid('sponsored',6)||S.subs<1000){toast('Şart sağlanmadı!','❌');return;}
+  S.avid.sponsored=S.videos;
+  updateQuestProgress('action',1,{action:'sponsored'});
+  const brands=['TechMart','GamingShop','YemekSepeti','FitnessPro','TravelTR','MobilBank','EnerjiDrink','Spotify TR'];
+  // sponsor: abone başına 0.01-0.03₺ (gerçekçi CPM sponsorluk)
+  const m=addMoney(Math.max(50,Math.floor(S.subs*rand(1,3)/100)));
+  addXP(18);
+  toast(`${brands[rand(0,brands.length-1)]} sponsorluğu! +₺${m}`,'🏷️');
+  updateUI();
+}
+
+// ─────────────────────────────────────────
+// VIDEO MODAL
+// ─────────────────────────────────────────
+let MS={step:0,cat:null,st:null,dur:null,qual:null,_t:''};
+
+function openVideoModal(){
+  if(S.todayVids>=S.dailyGoal){
+    toast(t('video_limit'),'🚫');
+    return;
+  }
+  MS={step:0,cat:null,st:null,dur:null,qual:null,_t:''};
+  buildMSteps(4);
+  buildS0(); buildS1(); buildS2();
+  showMS(0);
+  document.getElementById('vmodal').classList.remove('hidden');
+}
+function closeModal(){ document.getElementById('vmodal').classList.add('hidden'); }
+
+function buildMSteps(n){
+  document.getElementById('msteps').innerHTML=Array.from({length:n},(_,i)=>`<div class="mstep" id="ms${i}"></div>`).join('');
+}
+function showMS(n){
+  MS.step=n;
+  document.querySelectorAll('.step-p').forEach((p,i)=>p.classList.toggle('active',i===n));
+  document.querySelectorAll('.mstep').forEach((d,i)=>{d.classList.toggle('active',i===n);d.classList.toggle('done',i<n);});
+  document.getElementById('mbk').classList.toggle('hidden',n===0);
+  const nb=document.getElementById('mnx');
+  if(n===3){nb.className='mup';nb.textContent='🚀 Videoyu Yükle!';nb.onclick=confirmUpload;buildS3();}
+  else{nb.className='mnx';nb.textContent='Devam →';nb.onclick=mNext;}
+}
+function mNext(){
+  if(MS.step===0&&!MS.cat){toast('Kategori seç!','⚠️');return;}
+  if(MS.step===1&&!MS.st){toast('Stil seç!','⚠️');return;}
+  if(MS.step===2&&(!MS.dur||!MS.qual)){toast('Süre ve kalite seç!','⚠️');return;}
+  showMS(MS.step+1);
+}
+function mBack(){ showMS(MS.step-1); }
+
+function selOpt(type,id,el){
+  document.querySelectorAll('#og-'+type+' .ocard').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel');
+  MS[type]=id;
+}
+
+function buildS0(){
+  document.getElementById('step-0').innerHTML='<div class="slbl">Adım 1/4 — Kategori</div>'+
+    '<div class="ogrid" id="og-cat">'+VID_CATS.map(c=>{
+      const lk=S.subs<c.req;
+      return `<div class="ocard${lk?' locked':''}" onclick="${lk?`toast('${fmt(c.req)} abone gerek','🔒')`:`selOpt('cat','${c.id}',this)`}">
+        <div class="oi">${c.ic}</div><div class="on">${c.name}</div>${c.req?`<div class="ob">${fmt(c.req)}+</div>`:''}
+      </div>`;
+    }).join('')+'</div>';
+}
+function buildS1(){
+  document.getElementById('step-1').innerHTML='<div class="slbl">Adım 2/4 — Başlık Stili</div>'+
+    '<div class="ogrid c2" id="og-st">'+VID_STYLES.map(s=>`<div class="ocard" onclick="selOpt('st','${s.id}',this)">
+      <div class="oi">${s.ic}</div><div class="on">${s.name}</div><div class="os">${s.d}</div><div class="ob">x${s.sm} sub</div>
+    </div>`).join('')+'</div>';
+}
+function buildS2(){
+  document.getElementById('step-2').innerHTML='<div class="slbl">Adım 3/4 — Süre</div>'+
+    '<div class="ogrid c4" id="og-dur">'+VID_DURS.map(d=>`<div class="ocard" onclick="selOpt('dur','${d.id}',this)">
+      <div class="oi">${d.ic}</div><div class="on">${d.name}</div><div class="os">${d.sub}</div>
+    </div>`).join('')+'</div>'+
+    '<div class="slbl" style="margin-top:9px">Kalite</div>'+
+    '<div class="ogrid c4" id="og-qual">'+VID_QUALS.map(q=>{
+      const lk=eqTier(q.reqCat)<q.reqTier;
+      const cn=SCATS.find(c=>c.id===q.reqCat);
+      return `<div class="ocard${lk?' locked':''}" onclick="${lk?`toast('${cn?.name} T${q.reqTier} gerekli','🔒')`:`selOpt('qual','${q.id}',this)`}">
+        <div class="oi">${q.ic}</div><div class="on">${q.name}</div><div class="os">${q.sub}</div>
+      </div>`;
+    }).join('')+'</div>';
+}
+function buildS3(){
+  const cat=VID_CATS.find(c=>c.id===MS.cat);
+  const st=VID_STYLES.find(s=>s.id===MS.st)||{sm:1,mm:1,vm:1};
+  const dur=VID_DURS.find(d=>d.id===MS.dur)||{xm:1,mm:1,sm:1,vm:1};
+  const qual=VID_QUALS.find(q=>q.id===MS.qual)||{mm:1,sm:1};
+  const tArr=TITLES[MS.cat]||['Video'];
+  MS._t=tArr[rand(0,tArr.length-1)];
+  const e=calcEst(cat,st,dur,qual);
+  document.getElementById('step-3').innerHTML='<div class="slbl">Adım 4/4 — Önizleme</div>'+
+    `<div class="prev-card">
+      <div class="prev-thumb"><div class="prev-bg">${cat.ic}</div><div class="prev-main">${cat.ic}</div></div>
+      <div class="prev-title">${MS._t}</div>
+      <div class="prev-tags">
+        <span class="ptag c">${cat.name}</span><span class="ptag d">${dur.sub}</span>
+        <span class="ptag q">${qual.name}</span><span class="ptag s">${st.name}</span>
+      </div>
+    </div>
+    <div class="egrid">
+      <div class="ebox es1"><div class="ev">~${fmt(e.s)}</div><div class="el">Abone</div></div>
+      <div class="ebox es2"><div class="ev">~₺${fmt(e.m)}</div><div class="el">Para</div></div>
+      <div class="ebox es3"><div class="ev">~${fmt(e.v)}</div><div class="el">İzlenme</div></div>
+    </div>`;
+}
+
+function calcEst(cat,st,dur,qual){
+  const sv=SEASONS[S.season].vm;
+  // abone başına ~0.003-0.008₺ reklam geliri (gerçekçi YouTube CPM)
+  const bs=rand(2,8)+Math.floor(S.subs*0.005);
+  const bm=rand(5,20)+Math.floor(S.subs*0.003);
+  const bv=rand(20,80)+Math.floor(S.subs*0.20);
+  return {
+    s:Math.floor(bs*(cat?.sm||1)*(st?.sm||1)*(dur?.sm||1)*(qual?.sm||1)*tMult('subM')),
+    m:Math.floor(bm*(st?.mm||1)*(dur?.mm||1)*(qual?.mm||1)*tMult('monM')*sv),
+    v:Math.floor(bv*(st?.vm||1)*(dur?.vm||1)*tMult('viewM')*sv),
+    xp:Math.floor(14*(dur?.xm||1)),
+  };
+}
+
+function confirmUpload(){
+  closeModal();
+  const cat=VID_CATS.find(c=>c.id===MS.cat);
+  const st=VID_STYLES.find(s=>s.id===MS.st)||{sm:1,mm:1,vm:1};
+  const dur=VID_DURS.find(d=>d.id===MS.dur)||{xm:1,mm:1,sm:1,vm:1};
+  const qual=VID_QUALS.find(q=>q.id===MS.qual)||{mm:1,sm:1};
+  const e=calcEst(cat,st,dur,qual);
+  const s=addSubs(e.s); const m=addMoney(e.m); const v=addViews(e.v);
+  S.videos++; S.todayVids++;
+  generateComments(MS._t, s);
+  addLoyalty(rand(2,6));
+  recordVideoStat(MS.cat, s, m, v);
+  S.tourneyScore = (S.tourneyScore||0) + s;
+  // Görev güncelle
+  updateQuestProgress('video', 1, {cat:MS.cat, dur:MS.dur, qual:MS.qual});
+  updateQuestProgress('earnSubs', s, {});
+  updateQuestProgress('earnMoney', m, {});
+  S.videoFeed.unshift({ic:cat.ic,title:`${cat.name}: "${MS._t}"`,s,m,n:S.videos});
+  if(S.videoFeed.length>30) S.videoFeed.pop();
+  addXP(e.xp);
+  vfxCamFlash(); sfxClick(); floatn('🎬 Video yüklendi! +'+s+' abone!');
+  toast(`${cat.ic} "${MS._t}" • +${s} abone, +₺${m}`,'🎥');
+  updateDayBanner(); updateUI(); renderFeed();
+}
+
+function renderFeed(){
+  const el=document.getElementById('vfeed');
+  if(!S.videoFeed.length){el.innerHTML='<div style="color:var(--muted);text-align:center;padding:18px;font-size:.78rem;">Henüz video yok 🎬</div>';return;}
+  el.innerHTML=S.videoFeed.map(v=>`
+    <div class="vitem">
+      <div class="vthumb">${v.ic}</div>
+      <div class="vinfo"><div class="vtitle">${v.title}</div><div class="vstats">Video #${v.n} • +${v.s} abone</div></div>
+      <div class="vearn">+₺${v.m}</div>
+    </div>`).join('');
+}
+
+// ─────────────────────────────────────────
+// RIVALS
+// ─────────────────────────────────────────
+function initRivals(){
+  S.rivals=RIVAL_DEFS.map(d=>({name:d.name,ic:d.ic,color:d.color,subs:d.start}));
+}
+function updateRivalsUI(){
+  const el=document.getElementById('rival-list');
+  if(!el) return;
+  const all=[...S.rivals.map(r=>r.subs),S.subs];
+  const maxS=Math.max(...all);
+  const sorted=[...S.rivals].sort((a,b)=>b.subs-a.subs);
+  el.innerHTML=sorted.map(r=>{
+    const ahead=S.subs>=r.subs;
+    const rp=maxS>0?Math.round(r.subs/maxS*100):0;
+    const diff=Math.abs(S.subs-r.subs);
+    const def=RIVAL_DEFS.find(d=>d.name===r.name);
+    const tier=def?Math.min(4,Math.floor(Math.log10(Math.max(1,def.start))/1.5)):1;
+    const tierLabel=['','🌱 Yeni','⭐ Orta','🏆 Büyük','💎 Dev'][Math.min(4,tier+1)]||'🌱';
+    return `<div class="ritem">
+      <div class="rava">${r.ic}</div>
+      <div class="rinfo">
+        <div class="rname" style="display:flex;align-items:center;gap:5px">${r.name} <span style="font-size:.58rem;color:#aaa;font-weight:400">${tierLabel}</span></div>
+        <div class="rsubs">${fmt(r.subs)} abone</div>
+        <div class="rbar-w"><div class="rbar" style="width:${rp}%;background:${r.color}55;border:1px solid ${r.color}88;"></div></div>
+      </div>
+      <div class="rstatus ${ahead?'ah':'bh'}">${ahead?'▲+':'▼-'}${fmt(diff)}</div>
+    </div>`;
+  }).join('');
+}
+
+// ─────────────────────────────────────────
+// SHOP
+// ─────────────────────────────────────────
+let activeCat=SCATS[0].id;
+function initShop(){
+  document.getElementById('scat-tabs').innerHTML=SCATS.map(c=>
+    `<div class="sctab${c.id===activeCat?' active':''}" onclick="switchShopCat('${c.id}')">${c.name}</div>`
+  ).join('');
+  renderShop();
+}
+function switchShopCat(id){ activeCat=id; initShop(); }
+
+const tierCols=['','#888','#00b0ff','#00e676','#ffd700','#ff9800','#e91e63'];
+const tierNames=['','Baz','Orta','İyi','Harika','Mükemmel','Pro'];
+
+function renderShop(){
+  const items=ITEMS.filter(i=>i.cat===activeCat);
+  const eqId=S.equipment[activeCat];
+  document.getElementById('shop-grid').innerHTML=items.map(item=>{
+    const owned=S.owned.includes(item.id)||item.price===0;
+    const eq=eqId===item.id;
+    const tc=tierCols[item.tier]||'#888';
+    const tn=tierNames[item.tier]||'';
+    let btn='';
+    if(eq) btn=`<button class="sequip on" disabled>✓ Takılı</button>`;
+    else if(owned) btn=`<button class="sequip" onclick="equipItem('${item.id}')">Tak</button>`;
+    else btn=`<button class="sbuy" onclick="buyItem('${item.id}')" ${S.money<item.price?'disabled':''}>₺${fmt(item.price)}</button>`;
+    return `<div class="sitem${owned?' owned':''}${eq?' equipped':''}">
+      <div class="stier" style="background:${tc}18;color:${tc}">${tn}</div>
+      ${eq?`<div class="eq-badge" style="background:${tc}18;color:${tc}">Takılı</div>`:''}
+      <div class="si">${item.ic}</div>
+      <div class="sn">${item.name}</div>
+      <div class="sb">${item.d}</div>
+      ${!owned&&item.price>0?`<div class="sp">₺${fmt(item.price)}</div>`:''}
+      ${btn}
+    </div>`;
+  }).join('');
+}
+
+function buyItem(id){
+  const it=ITEMS.find(i=>i.id===id);
+  if(!it||S.money<it.price){toast('Yetersiz para!','❌');return;}
+  S.money-=it.price; S.owned.push(id);
+  addXP(22);
+  floatn('🛍️ '+it.name+' alındı!');
+  toast(`${it.name} alındı! ${it.d}`,'🛒');
+  initShop(); updateUI();
+}
+function equipItem(id){
+  const it=ITEMS.find(i=>i.id===id);
+  if(!it) return;
+  if(!S.owned.includes(id)&&it.price>0){toast('Önce satın al!','❌');return;}
+  S.equipment[it.cat]=id;
+  toast(`${it.name} takıldı!`,'⚡');
+  initShop(); updateUI();
+}
+
+// ─────────────────────────────────────────
+// TABS
+// ─────────────────────────────────────────
+function switchTab(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  const tabEl = document.getElementById('tab-'+id);
+  if(tabEl) tabEl.classList.add('active');
+  const order=['home','action','rivals','shop','community','analytics','tourney','videos'];
+  const tabIdx = order.indexOf(id);
+  const allTabs = document.querySelectorAll('.tab');
+  if(allTabs[tabIdx]) allTabs[tabIdx].classList.add('active');
+  if(id==='shop'){initShop();}
+  if(id==='rivals'){updateRivalsUI();}
+  if(id==='videos'){renderFeed();}
+  if(id==='community'){renderComments();updateCommunityUI();}
+  if(id==='analytics'){renderAnalytics();}
+  if(id==='tourney'){renderTourney();}
+}
+
+// ─────────────────────────────────────────
+// TOAST / FLOAT
+// ─────────────────────────────────────────
+function toast(msg,ic='ℹ️'){
+  const c=document.getElementById('toast-c');
+  const d=document.createElement('div');
+  d.className='toast';
+  d.innerHTML=`<span>${ic}</span><span>${msg}</span>`;
+  c.appendChild(d);
+  setTimeout(()=>d.remove(),2800);
+}
+function floatn(msg){
+  const d=document.createElement('div');
+  d.className='floatn';
+  d.textContent=msg;
+  document.body.appendChild(d);
+  setTimeout(()=>d.remove(),1600);
+}
+
+
+// ═══════════════════════════════════════════
+// WEB AUDIO — SES EFEKTLERİ
+// ═══════════════════════════════════════════
+let audioCtx = null;
+function getAudioCtx(){
+  if(!audioCtx){
+    try { audioCtx = new (window.AudioContext||window.webkitAudioContext)(); } catch(e){}
+  }
+  return audioCtx;
+}
+
+function playTone(freq, type='sine', dur=0.12, vol=0.18, delay=0){
+  const ctx = getAudioCtx(); if(!ctx) return;
+  try {
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.type = type; o.frequency.value = freq;
+    const t = ctx.currentTime + delay;
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(vol, t + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+    o.start(t); o.stop(t + dur + 0.05);
+  } catch(e){}
+}
+
+// Abone kazanma — kısa çıkış sesi
+function sfxSubscribe(){
+  playTone(523, 'sine',  0.08, 0.14);
+  playTone(659, 'sine',  0.08, 0.14, 0.08);
+  playTone(784, 'sine',  0.12, 0.16, 0.16);
+}
+// Para kazanma — coin sesi
+function sfxMoney(){
+  playTone(880, 'sine', 0.06, 0.12);
+  playTone(1100,'sine', 0.06, 0.12, 0.06);
+}
+// Viral — fanfar
+function sfxViral(){
+  [523,659,784,1047].forEach((f,i) => playTone(f,'square',0.1,0.12,i*0.07));
+}
+// Rozet — ödül sesi
+function sfxBadge(){
+  [784,988,1175,1568].forEach((f,i) => playTone(f,'sine',0.15,0.15,i*0.09));
+}
+// Hata
+function sfxError(){
+  playTone(200,'sawtooth',0.15,0.12);
+  playTone(160,'sawtooth',0.15,0.10,0.12);
+}
+// Tıklama
+function sfxClick(){
+  playTone(440,'sine',0.04,0.07);
+}
+// Gün geçişi
+function sfxNewDay(){
+  [392,494,587].forEach((f,i) => playTone(f,'sine',0.12,0.10,i*0.10));
+}
+// Level up
+function sfxLevelUp(){
+  [523,659,784,1047,1319].forEach((f,i) => playTone(f,'sine',0.18,0.16,i*0.08));
+}
+// Stüdyo yükseltme
+function sfxStudioUp(){
+  [440,554,659,880].forEach((f,i) => playTone(f,'triangle',0.14,0.14,i*0.09));
+}
+
+// ═══════════════════════════════════════════
+// GÖRSEL EFEKTLERİ
+// ═══════════════════════════════════════════
+
+// Kamera flaş
+function vfxCamFlash(){
+  const d = document.createElement('div');
+  d.className = 'cam-flash';
+  document.body.appendChild(d);
+  setTimeout(()=>d.remove(), 400);
+}
+
+// Para uçma efekti
+function vfxMoneyFly(amount){
+  const d = document.createElement('div');
+  d.className = 'money-fly';
+  d.textContent = '+₺' + fmt(amount);
+  const x = 20 + Math.random()*60;
+  d.style.cssText = `left:${x}%;bottom:80px;`;
+  document.body.appendChild(d);
+  setTimeout(()=>d.remove(), 1200);
+}
+
+// Viral efekti
+function vfxViral(){
+  const emojis = ['🔥','💥','⚡','🚀'];
+  emojis.forEach((e,i)=>{
+    setTimeout(()=>{
+      const d = document.createElement('div');
+      d.className = 'viral-burst';
+      d.textContent = e;
+      d.style.left = (20+Math.random()*60)+'%';
+      d.style.top  = (20+Math.random()*60)+'%';
+      document.body.appendChild(d);
+      setTimeout(()=>d.remove(),1300);
+    }, i*120);
+  });
+}
+
+// Konfeti — milestone kutlama
+function vfxConfetti(){
+  const colors = ['#ff4444','#ffd700','#00e676','#00b0ff','#b388ff','#ff9800'];
+  for(let i=0;i<40;i++){
+    setTimeout(()=>{
+      const d = document.createElement('div');
+      d.className = 'confetti-piece';
+      d.style.cssText = `
+        left:${Math.random()*100}%;
+        top:-10px;
+        background:${colors[Math.floor(Math.random()*colors.length)]};
+        animation: confettiFall ${1.2+Math.random()*1.2}s ease ${Math.random()*0.4}s forwards;
+        transform: rotate(${Math.random()*360}deg);
+      `;
+      document.body.appendChild(d);
+      setTimeout(()=>d.remove(), 2500);
+    }, i*30);
+  }
+}
+
+// Buton ripple
+function vfxRipple(btn, e){
+  const rect = btn.getBoundingClientRect();
+  const x = ((e.clientX - rect.left)/rect.width*100).toFixed(1);
+  const y = ((e.clientY - rect.top)/rect.height*100).toFixed(1);
+  btn.style.setProperty('--rx', x+'%');
+  btn.style.setProperty('--ry', y+'%');
+  btn.classList.add('rippling');
+  setTimeout(()=>btn.classList.remove('rippling'), 350);
+}
+
+// Stat sayacı bounce
+function vfxStatBounce(elId, cls){
+  const el = document.getElementById(elId);
+  if(!el) return;
+  el.classList.remove(cls);
+  void el.offsetWidth; // reflow
+  el.classList.add(cls);
+  setTimeout(()=>el.classList.remove(cls), 500);
+}
+
+// Rozet kazanma overlay (checkBadges'i override eder)
+let _pendingBadgeQueue = [];
+let _badgeShowing = false;
+
+function showBadgeEarnOverlay(badge){
+  if(_badgeShowing){ _pendingBadgeQueue.push(badge); return; }
+  _badgeShowing = true;
+  sfxBadge();
+  vfxConfetti();
+  const ov = document.createElement('div');
+  ov.className = 'badge-earn-overlay';
+  ov.innerHTML = `
+    <div class="badge-earn-box">
+      <span class="beo-icon">${badge.ic}</span>
+      <div class="beo-title">ROZET KAZANDIN!</div>
+      <div class="beo-name">${badge.name}</div>
+      <div class="beo-desc">${badge.desc}</div>
+      <button class="beo-btn" onclick="this.closest('.badge-earn-overlay').remove();_badgeShowing=false;if(_pendingBadgeQueue.length){showBadgeEarnOverlay(_pendingBadgeQueue.shift());}">
+        Harika! 🎉
+      </button>
+    </div>`;
+  document.body.appendChild(ov);
+}
+
+
+// ═══════════════════════════════════════════
+// GÜNLÜK GÖREV SİSTEMİ
+// ═══════════════════════════════════════════
+const QUEST_POOL = [
+  // Video görevleri
+  {id:'vid_any',    ic:'🎥', title:'Video Çek',          type:'videos',   need:1, xp:20,  bonus:'money', bonusAmt:()=>Math.max(50,  Math.floor(S.subs*0.02))},
+  {id:'vid_2',      ic:'🎬', title:'2 Video Çek',         type:'videos',   need:2, xp:35,  bonus:'money', bonusAmt:()=>Math.max(100, Math.floor(S.subs*0.04))},
+  {id:'vid_gaming', ic:'🎮', title:'Gaming Videosu Çek',  type:'cat',      cat:'gaming', need:1, xp:25, bonus:'subs', bonusAmt:()=>Math.max(5,  Math.floor(S.subs*0.015))},
+  {id:'vid_vlog',   ic:'📹', title:'Vlog Çek',            type:'cat',      cat:'vlog',   need:1, xp:22, bonus:'money',bonusAmt:()=>Math.max(80, Math.floor(S.subs*0.025))},
+  {id:'vid_komedi', ic:'🤣', title:'Komedi Videosu Çek',  type:'cat',      cat:'komedi', need:1, xp:28, bonus:'subs', bonusAmt:()=>Math.max(8,  Math.floor(S.subs*0.02))},
+  {id:'vid_tech',   ic:'💻', title:'Teknoloji Videosu Çek',type:'cat',     cat:'tech',   need:1, xp:25, bonus:'money',bonusAmt:()=>Math.max(120,Math.floor(S.subs*0.03))},
+  // Aksiyon görevleri
+  {id:'do_collab',  ic:'🤝', title:'Kolaborasyon Yap',    type:'action',   action:'collab',   need:1, xp:30, bonus:'subs', bonusAmt:()=>Math.max(10, Math.floor(S.subs*0.025))},
+  {id:'do_stream',  ic:'🔴', title:'Canlı Yayın Aç',      type:'action',   action:'stream',   need:1, xp:28, bonus:'money',bonusAmt:()=>Math.max(150,Math.floor(S.subs*0.04))},
+  {id:'do_trend',   ic:'📈', title:'Trend Video Dene',    type:'action',   action:'trend',    need:1, xp:35, bonus:'subs', bonusAmt:()=>Math.max(15, Math.floor(S.subs*0.03))},
+  {id:'do_partner', ic:'🎞️', title:'Partner Video Çek',   type:'action',   action:'partner',  need:1, xp:40, bonus:'subs', bonusAmt:()=>Math.max(20, Math.floor(S.subs*0.035))},
+  {id:'do_sponsor', ic:'🏷️', title:'Sponsorluk Al',       type:'action',   action:'sponsor',  need:1, xp:32, bonus:'money',bonusAmt:()=>Math.max(200,Math.floor(S.subs*0.05))},
+  // Kazanım görevleri
+  {id:'earn_subs',  ic:'👥', title:'100 Abone Kazan',     type:'earnSubs', need:100, xp:30, bonus:'money',bonusAmt:()=>Math.max(100,Math.floor(S.subs*0.03))},
+  {id:'earn_money', ic:'💰', title:'Para Kazan',          type:'earnMoney',need:()=>Math.max(200,Math.floor(S.subs*0.05)), xp:25, bonus:'xp', bonusAmt:()=>50},
+  // Uzun video
+  {id:'vid_long',   ic:'🎞️', title:'Uzun Video Çek',      type:'vidDur',   dur:'lo', need:1, xp:30, bonus:'money',bonusAmt:()=>Math.max(150,Math.floor(S.subs*0.04))},
+  {id:'vid_4k',     ic:'✨', title:'4K Video Çek',        type:'vidQual',  qual:'4k', need:1, xp:40, bonus:'subs', bonusAmt:()=>Math.max(12, Math.floor(S.subs*0.02))},
+];
+
+function generateDailyQuests(){
+  // 3 farklı görev seç (aynı type'dan birden fazla olmasın)
+  const shuffled = [...QUEST_POOL].sort(()=>Math.random()-0.5);
+  const picked = [];
+  const usedTypes = new Set();
+  for(const q of shuffled){
+    if(picked.length >= 3) break;
+    if(usedTypes.has(q.type+q.id)) continue;
+    usedTypes.add(q.type+q.id);
+    const need = typeof q.need === 'function' ? q.need() : q.need;
+    picked.push({
+      ...q,
+      need,
+      progress: 0,
+      completed: false,
+      claimed: false,
+    });
+  }
+  S.quests = picked;
+  S.questDay = S.day;
+}
+
+function checkAndRefreshQuests(){
+  if(!S.quests || !S.quests.length || S.questDay !== S.day){
+    generateDailyQuests();
+  }
+  renderQuests();
+}
+
+function updateQuestProgress(type, value, extra){
+  if(!S.quests) return;
+  S.quests.forEach(q => {
+    if(q.completed) return;
+    let matched = false;
+    if(type==='video' && q.type==='videos') matched=true;
+    if(type==='video' && q.type==='cat' && extra.cat===q.cat) matched=true;
+    if(type==='video' && q.type==='vidDur' && extra.dur===q.dur) matched=true;
+    if(type==='video' && q.type==='vidQual' && extra.qual===q.qual) matched=true;
+    if(type==='action' && q.type==='action' && extra.action===q.action) matched=true;
+    if(type==='earnSubs'  && q.type==='earnSubs')  { q.progress+=value; }
+    if(type==='earnMoney' && q.type==='earnMoney') { q.progress+=value; }
+    if(matched && q.type!=='earnSubs' && q.type!=='earnMoney') q.progress++;
+    if(q.progress >= q.need && !q.completed){
+      q.completed = true;
+      claimQuestReward(q);
+    }
+  });
+  renderQuests();
+}
+
+function claimQuestReward(q){
+  addXP(q.xp);
+  const amt = typeof q.bonusAmt==='function' ? q.bonusAmt() : q.bonusAmt;
+  if(q.bonus==='money'){ addMoney(amt); floatn('🎯 Görev Tamam! +₺'+fmt(amt)); }
+  else if(q.bonus==='subs'){ addSubs(amt); floatn('🎯 Görev Tamam! +'+fmt(amt)+' abone'); }
+  else if(q.bonus==='xp'){ addXP(amt); floatn('🎯 Görev Tamam! +'+amt+' XP'); }
+  S.questsDone = (S.questsDone||0)+1;
+  sfxBadge();
+  toast('Görev tamamlandı: '+q.title,'🎯');
+  checkBadges();
+  updateUI();
+}
+
+function renderQuests(){
+  const el = document.getElementById('quest-list');
+  if(!el) return;
+  if(!S.quests||!S.quests.length){
+    el.innerHTML='<div style="color:var(--muted);font-size:.78rem;text-align:center;padding:12px;">Yükleniyor...</div>';
+    return;
+  }
+  el.innerHTML = S.quests.map(q=>{
+    const pct = Math.min(100, Math.round(q.progress/q.need*100));
+    return `<div class="quest-card ${q.completed?'done':''}">
+      <div class="qc-icon">${q.ic}</div>
+      <div class="qc-body">
+        <div class="qc-title">${q.title}</div>
+        <div class="qc-progress">${q.completed?'✅ Tamamlandı':q.progress+' / '+q.need}</div>
+        <div class="qc-prog-bar"><div class="qc-prog-fill" style="width:${pct}%"></div></div>
+      </div>
+      <div class="qc-reward">
+        <div class="qc-xp">+${q.xp} XP</div>
+        <div class="qc-bonus">${q.bonus==='money'?'₺'+fmt(typeof q.bonusAmt==='function'?q.bonusAmt():q.bonusAmt):q.bonus==='subs'?'+'+fmt(typeof q.bonusAmt==='function'?q.bonusAmt():q.bonusAmt)+' sub':'+'+q.bonusAmt+' XP'}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const ref = document.getElementById('quest-refresh');
+  if(ref){
+    const allDone = S.quests.every(q=>q.completed);
+    ref.textContent = allDone ? '🌟 Tüm görevler tamamlandı! Yarın yenileri gelecek.' : 'Görevler her gün yenilenir.';
+  }
+}
+
+// ═══════════════════════════════════════════
+// KRİZ ANLARI SİSTEMİ
+// ═══════════════════════════════════════════
+const CRISES = [
+  {
+    id:'copyright', ic:'⚖️', type:'TELİF UYARISI',
+    title:'Telif İhlali Uyarısı!',
+    desc:'Bir videon telif hakkı ihlali aldı. YouTube reklam gelirini kesiyor. Ne yaparsın?',
+    choices:[
+      {label:'🗑️ Videoyu kaldır',    effect:'Hasar minimumda tutuldu.',        type:'bad',   fn:()=>{ S.money=Math.max(0,S.money-Math.floor(S.subs*0.01)); }},
+      {label:'⚔️ İtiraz et',         effect:'%50 şans — kazanırsan kurtuldun!',type:'risky', fn:()=>{ if(Math.random()>0.5){ toast('İtiraz kabul edildi! Reklam gelirin geri döndü.','✅'); } else { addSubs(-Math.floor(S.subs*0.03)); toast('İtiraz reddedildi, abone kaybettin.','❌'); }}},
+      {label:'💸 Uzlaşma öde',        effect:'Para kaybedersin ama abonelerin korunur.',type:'bad', fn:()=>{ S.money=Math.max(0,S.money-Math.floor(S.subs*0.04)); }},
+    ]
+  },
+  {
+    id:'scandal', ic:'😤', type:'SKANDAL',
+    title:'Controversy Patladı!',
+    desc:'Eski bir tweetin gün yüzüne çıktı. Sosyal medya ikiye bölündü. Nasıl yönetirsin?',
+    choices:[
+      {label:'🙏 Özür videosu yayınla', effect:'Özür kabul gördü, çoğu abone kaldı.',type:'good',fn:()=>{ addSubs(-Math.floor(S.subs*0.04)); addXP(15); toast('Özür videosu iyi karşılandı!','✅'); }},
+      {label:'🤐 Sessiz kal',           effect:'Fırtına geçer ama yavaş...',         type:'risky',fn:()=>{ addSubs(-Math.floor(S.subs*0.08)); toast('Sessiz kalmak işe yaramadı...','😶'); }},
+      {label:'🔥 Konuyu gündemden uçur',effect:'Yeni viral video çek, dikkat dağıt!', type:'risky',fn:()=>{ if(Math.random()>0.4){ addSubs(Math.floor(S.subs*0.02)); toast('Viral video olayı kapattı!','🔥'); } else { addSubs(-Math.floor(S.subs*0.06)); toast('Plan tutmadı, daha da büyüdü...','😱'); }}},
+    ]
+  },
+  {
+    id:'hacker', ic:'💀', type:'GÜVENLİK',
+    title:'Kanal Hacklenme Girişimi!',
+    desc:'Birisi kanalına yetkisiz giriş yapmaya çalışıyor. Hesabın tehlike altında!',
+    choices:[
+      {label:'🔒 Hemen şifreni değiştir',   effect:'Kanal güvende, küçük panik yaşandı.',type:'good', fn:()=>{ addSubs(-Math.floor(S.subs*0.01)); toast('Hesap güvence altına alındı!','🔒'); }},
+      {label:'📢 Takipçileri uyar',          effect:'Topluluk desteği geldi!',            type:'good', fn:()=>{ addSubs(Math.floor(S.subs*0.01)); addLoyalty(10); toast('Topluluk seni destekledi!','💙'); }},
+      {label:'😴 Sonra hallederim',          effect:'Gecikme riski...',                   type:'risky',fn:()=>{ if(Math.random()>0.6){ toast('Neyse ki bir şey olmadı.','😅'); } else { addSubs(-Math.floor(S.subs*0.05)); S.money=Math.max(0,S.money-Math.floor(S.subs*0.03)); toast('Geç kaldın! Hasar büyüdü.','💀'); }}},
+    ]
+  },
+  {
+    id:'opportunity', ic:'🚀', type:'FIRSAT',
+    title:'Büyük Marka Teklifi!',
+    desc:'Tanınmış bir marka çok cazip bir sponsorluk teklif etti. Ama içerik özgürlüğünden ödün istiyorlar.',
+    choices:[
+      {label:'💰 Teklifi kabul et',     effect:'Büyük para kazanırsın ama bağımsızlık azalır.',type:'good', fn:()=>{ addMoney(Math.floor(S.subs*0.15)); addLoyalty(-15); toast('Sponsorluk anlaşması imzalandı!','💰'); }},
+      {label:'🤝 Kısmi anlaşma yap',    effect:'Orta yol — biraz para, biraz özgürlük.',       type:'good', fn:()=>{ addMoney(Math.floor(S.subs*0.07)); addLoyalty(-5); toast('Kısmi anlaşma yapıldı!','🤝'); }},
+      {label:'🙅 Reddet',               effect:'Para yok ama hayranlar sever.',                type:'good', fn:()=>{ addSubs(Math.floor(S.subs*0.02)); addLoyalty(20); toast('Reddettim, hayranlar bunu sevdi!','💙'); }},
+    ]
+  },
+  {
+    id:'burnout', ic:'😵', type:'TÜKENME',
+    title:'Yaratıcı Tıkanma Yaşıyorsun!',
+    desc:'Fikir bulamıyorsun, video çekmek istemiyorsun. Takipçiler içerik bekliyor.',
+    choices:[
+      {label:'😴 Kısa mola ver',        effect:'Dinlenirsin ama abone kaybı olur.',    type:'bad',  fn:()=>{ addSubs(-Math.floor(S.subs*0.02)); toast('Mola verdin, biraz abone ayrıldı.','😴'); }},
+      {label:'🔄 Farklı içerik dene',   effect:'Yeni kategori, yeni kitle!',           type:'risky',fn:()=>{ if(Math.random()>0.45){ addSubs(Math.floor(S.subs*0.04)); toast('Yeni format tuttu!','🎉'); } else { addSubs(-Math.floor(S.subs*0.01)); toast('Farklı format pek tutmadı.','🤷'); }}},
+      {label:'💪 Zorla çek, yayınla',   effect:'Kalite düşük ama içerik var.',         type:'bad',  fn:()=>{ addSubs(-Math.floor(S.subs*0.01)); addMoney(Math.floor(S.subs*0.02)); toast('Video yayında ama kalite düşük.','😅'); }},
+    ]
+  },
+  {
+    id:'viral_wrong', ic:'😱', type:'VİRAL TERS GİTTİ',
+    title:'Video Yanlış Yorumlandı!',
+    desc:'Bir videon amaçladığından çok farklı anlaşıldı ve viral oldu — ama olumsuz şekilde.',
+    choices:[
+      {label:'📝 Açıklama videosu yap', effect:'Gerçeği anlatırsın, çoğunluk anlar.',  type:'good', fn:()=>{ addSubs(-Math.floor(S.subs*0.02)); addXP(20); toast('Açıklama işe yaradı!','✅'); }},
+      {label:'✂️ Videoyu düzenle',      effect:'Sorunlu kısmı kesersin.',               type:'good', fn:()=>{ addSubs(-Math.floor(S.subs*0.01)); toast('Video düzenlendi, kriz atlatıldı.','✂️'); }},
+      {label:'🎭 Bunu içeriğe çevir',   effect:'Gündem olmayı lehine kullan!',          type:'risky',fn:()=>{ if(Math.random()>0.4){ addSubs(Math.floor(S.subs*0.05)); toast('Krizdeki viralin avantajını aldın!','🚀'); } else { addSubs(-Math.floor(S.subs*0.08)); toast('Plan ters tepti, durum kötüleşti.','💀'); }}},
+    ]
+  },
+  {
+    id:'collab_big', ic:'🌟', type:'FIRSAT',
+    title:'Dev Kanal İş Birliği Teklifi!',
+    desc:'10M+ aboneli bir YouTuber seninle video yapmak istiyor! Ama kanalının tarzından uzaklaşman gerekebilir.',
+    choices:[
+      {label:'✅ Hemen kabul et',        effect:'Büyük abone patlaması!',               type:'good', fn:()=>{ addSubs(Math.floor(S.subs*0.12)); toast('Dev kolabo! Büyük abone artışı!','🌟'); }},
+      {label:'🤔 Şartlarını müzakere et',effect:'Daha iyi anlaşma çıkabilir.',          type:'risky',fn:()=>{ if(Math.random()>0.35){ addSubs(Math.floor(S.subs*0.15)); toast('Müzakere işe yaradı, daha iyi anlaşma!','💰'); } else { addSubs(Math.floor(S.subs*0.05)); toast('Müzakere uzadı, küçük kolabo oldu.','😅'); }}},
+      {label:'❌ Reddet',                effect:'Kendi yolunda devam edersin.',          type:'bad',  fn:()=>{ addLoyalty(5); toast('Reddettim, yoluma devam.','😤'); }},
+    ]
+  },
+];
+
+function triggerCrisis(){
+  // Rastgele olay yerine kriz — sadece belirli gün aralıklarında
+  if(S.day < 3) return;
+  if(Math.random() > 0.30) return; // %30 şans her gün
+  const eligible = CRISES.filter(c => {
+    // Bazı krizler abone şartı
+    if(c.id==='collab_big' && S.subs < 10000) return false;
+    if(c.id==='opportunity' && S.subs < 1000) return false;
+    return true;
+  });
+  const crisis = eligible[rand(0, eligible.length-1)];
+  showCrisisPopup(crisis);
+}
+
+function showCrisisPopup(crisis){
+  document.getElementById('crisis-type').textContent = crisis.type;
+  document.getElementById('crisis-icon').textContent = crisis.ic;
+  document.getElementById('crisis-title').textContent = crisis.title;
+  document.getElementById('crisis-desc').textContent = crisis.desc;
+  document.getElementById('crisis-choices').innerHTML = crisis.choices.map((c,i)=>`
+    <div class="crisis-choice" onclick="chooseCrisis(${i})">
+      <div class="cc-label">${c.label}</div>
+      <div class="cc-effect ${c.type}">${c.effect}</div>
+    </div>`).join('');
+  document.getElementById('crisis-popup').classList.remove('hidden');
+  // Seçim fonksiyonu için geçici sakla
+  window._activeCrisis = crisis;
+  sfxError();
+}
+
+function chooseCrisis(idx){
+  const crisis = window._activeCrisis;
+  if(!crisis) return;
+  const choice = crisis.choices[idx];
+  choice.fn();
+  updateUI();
+  document.getElementById('crisis-popup').classList.add('hidden');
+  window._activeCrisis = null;
+}
+
+// ─────────────────────────────────────────
+// PASSIVE INCOME
+// ─────────────────────────────────────────
+setInterval(()=>{
+  if(S.subs>0){
+    const p=Math.floor(S.subs*0.0005*tMult('monM'));
+    if(p>0){S.money+=p;document.getElementById('hd-money').textContent=fmt(S.money);document.getElementById('st-mon').textContent='₺'+fmt(S.money);}
+  }
+},6000);
+
+
+// ═══════════════════════════════════════════
+// DİL SİSTEMİ
+// ═══════════════════════════════════════════
+const LANGS = {
+  tr:{ code:'tr', flag:'🇹🇷', label:'Türkçe',
+    login:'Giriş Yap', register:'Kayıt Ol', guest:'Misafir Olarak Oyna',
+    username:'Kullanıcı adı', gmail:'Gmail adresi', password:'Şifre',
+    logout:'Çıkış Yap', account:'Hesap', menu:'Menü',
+    leaderboard:'🏆 Global Sıralama', lb_subs:'👥 Abone', lb_money:'💰 Para',
+    lang_title:'🌍 Oyun Dili',
+    tab_home:'Kanal', tab_action:'Aksiyon', tab_rivals:'Rakipler', tab_shop:'Market', tab_videos:'Arşiv',
+    lbl_subs:'Abone', lbl_money:'Para', lbl_views:'İzlenme', lbl_vids:'Video',
+    goals:'🏆 Hedefler', daily_action:'🎬 Günlük Aksiyon',
+    rivals_title:'⚔️ Rakip YouTuberlar', shop_title:'🛒 Ekipman Marketi', archive_title:'📋 Video Arşivi',
+    season_spring:'İlkbahar', season_summer:'Yaz', season_autumn:'Sonbahar', season_winter:'Kış',
+    daily_goal:'Günlük hedef', videos_txt:'video çek', next_day:'Sonraki Gün',
+    loading:'Yükleniyor...', no_records:'Henüz kayıt yok 🎮', lb_fail:'Sıralama yüklenemedi 😔',
+    err_empty:'Kullanıcı adı, gmail ve şifre gir!', err_empty_login:'Kullanıcı adı ve şifre gir!',
+    err_user:'Kullanıcı adı en az 3 karakter!', err_gmail:'Geçerli bir gmail adresi gir!',
+    err_pass:'Şifre en az 4 karakter!', err_wrong:'Kullanıcı adı veya şifre yanlış!',
+    err_exists:'Bu kullanıcı adı zaten alınmış!',
+    ok_login:'Hoş geldin', ok_register:'Kayıt başarılı!',
+    saved:'Oyun kaydedildi ☁️', guest_warn:'Misafir olarak oynuyorsun — ilerleme kaydedilmez!',
+    video_limit:'Bugün video limitine ulaştın! Yarın devam et.', day_txt:'Gün',
+    collab:'Kolaborasyon', stream:'Canlı Yayın', trend:'Trend Video',
+    partner:'Partner Video', sponsor:'Sponsorluk', video_chek:'Video Çek',
+  },
+  en:{ code:'en', flag:'🇬🇧', label:'English',
+    login:'Login', register:'Register', guest:'Play as Guest',
+    username:'Username', gmail:'Gmail address', password:'Password',
+    logout:'Logout', account:'Account', menu:'Menu',
+    leaderboard:'🏆 Global Leaderboard', lb_subs:'👥 Subscribers', lb_money:'💰 Money',
+    lang_title:'🌍 Game Language',
+    tab_home:'Channel', tab_action:'Actions', tab_rivals:'Rivals', tab_shop:'Shop', tab_videos:'Archive',
+    lbl_subs:'Subscribers', lbl_money:'Money', lbl_views:'Views', lbl_vids:'Videos',
+    goals:'🏆 Goals', daily_action:'🎬 Daily Actions',
+    rivals_title:'⚔️ Rival YouTubers', shop_title:'🛒 Equipment Shop', archive_title:'📋 Video Archive',
+    season_spring:'Spring', season_summer:'Summer', season_autumn:'Autumn', season_winter:'Winter',
+    daily_goal:'Daily goal', videos_txt:'videos', next_day:'Next Day',
+    loading:'Loading...', no_records:'No records yet 🎮', lb_fail:'Could not load leaderboard 😔',
+    err_empty:'Enter username, gmail and password!', err_empty_login:'Enter username and password!',
+    err_user:'Username must be at least 3 chars!', err_gmail:'Enter a valid gmail address!',
+    err_pass:'Password must be at least 4 chars!', err_wrong:'Wrong username or password!',
+    err_exists:'This username is already taken!',
+    ok_login:'Welcome back', ok_register:'Registration successful!',
+    saved:'Game saved ☁️', guest_warn:'Playing as guest — progress will not be saved!',
+    video_limit:'Daily video limit reached! Come back tomorrow.', day_txt:'Day',
+    collab:'Collaboration', stream:'Live Stream', trend:'Trend Video',
+    partner:'Partner Video', sponsor:'Sponsorship', video_chek:'Record Video',
+  },
+  ru:{ code:'ru', flag:'🇷🇺', label:'Русский',
+    login:'Войти', register:'Регистрация', guest:'Играть как гость',
+    username:'Имя пользователя', gmail:'Gmail адрес', password:'Пароль',
+    logout:'Выйти', account:'Аккаунт', menu:'Меню',
+    leaderboard:'🏆 Мировой рейтинг', lb_subs:'👥 Подписчики', lb_money:'💰 Деньги',
+    lang_title:'🌍 Язык игры',
+    tab_home:'Канал', tab_action:'Действия', tab_rivals:'Соперники', tab_shop:'Магазин', tab_videos:'Архив',
+    lbl_subs:'Подписчики', lbl_money:'Деньги', lbl_views:'Просмотры', lbl_vids:'Видео',
+    goals:'🏆 Цели', daily_action:'🎬 Действия дня',
+    rivals_title:'⚔️ Соперники', shop_title:'🛒 Магазин', archive_title:'📋 Архив видео',
+    season_spring:'Весна', season_summer:'Лето', season_autumn:'Осень', season_winter:'Зима',
+    daily_goal:'Цель дня', videos_txt:'видео', next_day:'Следующий день',
+    loading:'Загрузка...', no_records:'Записей пока нет 🎮', lb_fail:'Рейтинг недоступен 😔',
+    err_empty:'Введите имя, gmail и пароль!', err_empty_login:'Введите имя и пароль!',
+    err_user:'Имя мин. 3 символа!', err_gmail:'Введите корректный gmail!',
+    err_pass:'Пароль мин. 4 символа!', err_wrong:'Неверное имя или пароль!',
+    err_exists:'Это имя уже занято!',
+    ok_login:'Добро пожаловать', ok_register:'Регистрация успешна!',
+    saved:'Игра сохранена ☁️', guest_warn:'Гостевой режим — прогресс не сохраняется!',
+    video_limit:'Лимит видео на сегодня! Возвращайся завтра.', day_txt:'День',
+    collab:'Коллаборация', stream:'Прямой эфир', trend:'Трендовое видео',
+    partner:'Совместное видео', sponsor:'Спонсорство', video_chek:'Снять видео',
+  },
+  fr:{ code:'fr', flag:'🇫🇷', label:'Français',
+    login:'Connexion', register:"S'inscrire", guest:'Jouer en invité',
+    username:"Nom d'utilisateur", gmail:'Adresse Gmail', password:'Mot de passe',
+    logout:'Déconnexion', account:'Compte', menu:'Menu',
+    leaderboard:'🏆 Classement mondial', lb_subs:'👥 Abonnés', lb_money:'💰 Argent',
+    lang_title:'🌍 Langue du jeu',
+    tab_home:'Chaîne', tab_action:'Actions', tab_rivals:'Rivaux', tab_shop:'Boutique', tab_videos:'Archives',
+    lbl_subs:'Abonnés', lbl_money:'Argent', lbl_views:'Vues', lbl_vids:'Vidéos',
+    goals:'🏆 Objectifs', daily_action:'🎬 Actions du jour',
+    rivals_title:'⚔️ YouTubeurs rivaux', shop_title:'🛒 Boutique', archive_title:'📋 Archives vidéo',
+    season_spring:'Printemps', season_summer:'Été', season_autumn:'Automne', season_winter:'Hiver',
+    daily_goal:'Objectif quotidien', videos_txt:'vidéos', next_day:'Jour suivant',
+    loading:'Chargement...', no_records:'Aucun enregistrement 🎮', lb_fail:'Classement indisponible 😔',
+    err_empty:"Entrez nom, gmail et mot de passe!", err_empty_login:'Entrez nom et mot de passe!',
+    err_user:'Nom min. 3 caractères!', err_gmail:'Entrez un gmail valide!',
+    err_pass:'Mot de passe min. 4 caractères!', err_wrong:'Nom ou mot de passe incorrect!',
+    err_exists:'Ce nom est déjà pris!',
+    ok_login:'Bienvenue', ok_register:'Inscription réussie!',
+    saved:'Jeu sauvegardé ☁️', guest_warn:"Mode invité — progression non sauvegardée!",
+    video_limit:'Limite quotidienne atteinte! Revenez demain.', day_txt:'Jour',
+    collab:'Collaboration', stream:'Direct', trend:'Vidéo tendance',
+    partner:'Vidéo partenaire', sponsor:'Sponsoring', video_chek:'Filmer',
+  },
+  de:{ code:'de', flag:'🇩🇪', label:'Deutsch',
+    login:'Anmelden', register:'Registrieren', guest:'Als Gast spielen',
+    username:'Benutzername', gmail:'Gmail-Adresse', password:'Passwort',
+    logout:'Abmelden', account:'Konto', menu:'Menü',
+    leaderboard:'🏆 Weltrangliste', lb_subs:'👥 Abonnenten', lb_money:'💰 Geld',
+    lang_title:'🌍 Spielsprache',
+    tab_home:'Kanal', tab_action:'Aktionen', tab_rivals:'Rivalen', tab_shop:'Shop', tab_videos:'Archiv',
+    lbl_subs:'Abonnenten', lbl_money:'Geld', lbl_views:'Aufrufe', lbl_vids:'Videos',
+    goals:'🏆 Ziele', daily_action:'🎬 Tagesaktionen',
+    rivals_title:'⚔️ Rivalen', shop_title:'🛒 Ausrüstung', archive_title:'📋 Videoarchiv',
+    season_spring:'Frühling', season_summer:'Sommer', season_autumn:'Herbst', season_winter:'Winter',
+    daily_goal:'Tagesziel', videos_txt:'Videos', next_day:'Nächster Tag',
+    loading:'Laden...', no_records:'Noch keine Einträge 🎮', lb_fail:'Rangliste nicht verfügbar 😔',
+    err_empty:'Name, Gmail und Passwort eingeben!', err_empty_login:'Name und Passwort eingeben!',
+    err_user:'Name min. 3 Zeichen!', err_gmail:'Gültige Gmail-Adresse eingeben!',
+    err_pass:'Passwort min. 4 Zeichen!', err_wrong:'Falscher Name oder Passwort!',
+    err_exists:'Dieser Name ist bereits vergeben!',
+    ok_login:'Willkommen', ok_register:'Registrierung erfolgreich!',
+    saved:'Spiel gespeichert ☁️', guest_warn:'Gastmodus — Fortschritt wird nicht gespeichert!',
+    video_limit:'Tageslimit erreicht! Morgen weitermachen.', day_txt:'Tag',
+    collab:'Kollaboration', stream:'Livestream', trend:'Trend-Video',
+    partner:'Partner-Video', sponsor:'Sponsoring', video_chek:'Video aufnehmen',
+  },
+  es:{ code:'es', flag:'🇪🇸', label:'Español',
+    login:'Iniciar sesión', register:'Registrarse', guest:'Jugar como invitado',
+    username:'Nombre de usuario', gmail:'Dirección Gmail', password:'Contraseña',
+    logout:'Cerrar sesión', account:'Cuenta', menu:'Menú',
+    leaderboard:'🏆 Clasificación mundial', lb_subs:'👥 Suscriptores', lb_money:'💰 Dinero',
+    lang_title:'🌍 Idioma del juego',
+    tab_home:'Canal', tab_action:'Acciones', tab_rivals:'Rivales', tab_shop:'Tienda', tab_videos:'Archivo',
+    lbl_subs:'Suscriptores', lbl_money:'Dinero', lbl_views:'Vistas', lbl_vids:'Videos',
+    goals:'🏆 Metas', daily_action:'🎬 Acciones diarias',
+    rivals_title:'⚔️ Rivales', shop_title:'🛒 Tienda', archive_title:'📋 Archivo de videos',
+    season_spring:'Primavera', season_summer:'Verano', season_autumn:'Otoño', season_winter:'Invierno',
+    daily_goal:'Meta diaria', videos_txt:'videos', next_day:'Día siguiente',
+    loading:'Cargando...', no_records:'Aún no hay registros 🎮', lb_fail:'Clasificación no disponible 😔',
+    err_empty:'Ingresa nombre, gmail y contraseña!', err_empty_login:'Ingresa nombre y contraseña!',
+    err_user:'Nombre mín. 3 caracteres!', err_gmail:'Ingresa un gmail válido!',
+    err_pass:'Contraseña mín. 4 caracteres!', err_wrong:'Nombre o contraseña incorrectos!',
+    err_exists:'Este nombre ya está en uso!',
+    ok_login:'Bienvenido', ok_register:'¡Registro exitoso!',
+    saved:'Juego guardado ☁️', guest_warn:'Modo invitado — el progreso no se guardará!',
+    video_limit:'Límite diario alcanzado! Vuelve mañana.', day_txt:'Día',
+    collab:'Colaboración', stream:'Directo', trend:'Video tendencia',
+    partner:'Video conjunto', sponsor:'Patrocinio', video_chek:'Grabar video',
+  },
+};
+
+let currentLang = 'tr';
+const t = key => { const L=LANGS[currentLang]||LANGS.tr; return L[key]!==undefined?L[key]:(LANGS.tr[key]||key); };
+const SEASON_KEYS = ['season_spring','season_summer','season_autumn','season_winter'];
+
+function setLang(code) {
+  currentLang = code;
+  try { localStorage.setItem('yt_lang', code); } catch(e){}
+  renderLangGrid();
+  applyLangToUI();
+}
+
+function renderLangGrid() {
+  const el = document.getElementById('lang-grid');
+  if(!el) return;
+  el.innerHTML = Object.values(LANGS).map(l=>
+    `<div class="lang-btn${l.code===currentLang?' active':''}" onclick="setLang('${l.code}')">${l.flag} ${l.label}</div>`
+  ).join('');
+}
+
+function setText(id, txt) { const el=document.getElementById(id); if(el) el.textContent=txt; }
+function setPlaceholder(id, txt) { const el=document.getElementById(id); if(el) el.placeholder=txt; }
+
+function applyLangToUI() {
+  // ── Login screen ──
+  setText('lt-login-txt', t('login'));
+  setText('lt-reg-txt', t('register'));
+  setText('li-btn-txt', currentLoginTab==='login' ? t('login') : t('register'));
+  setText('li-guest-txt', t('guest'));
+  setPlaceholder('li-user', t('username'));
+  setPlaceholder('li-gmail', t('gmail'));
+  setPlaceholder('li-pass', t('password'));
+
+  // ── Drawer ──
+  setText('d-menu-title', '⚙️ '+t('menu'));
+  setText('d-acc-title', t('account'));
+  setText('d-login-txt', t('login'));
+  setText('d-reg-txt', t('register'));
+  setText('d-logout-txt', t('logout'));
+  setPlaceholder('d-user', t('username'));
+  setPlaceholder('d-pass', t('password'));
+  setText('d-lb-title', t('leaderboard'));
+  setText('lbt-subs-txt', t('lb_subs'));
+  setText('lbt-money-txt', t('lb_money'));
+  setText('d-lang-title', t('lang_title'));
+
+  // ── Tabs ──
+  const tabDefs = [
+    ['home',   'tab_home',   '🏠'],
+    ['action', 'tab_action', '🎬'],
+    ['rivals', 'tab_rivals', '⚔️'],
+    ['shop',   'tab_shop',   '🛒'],
+    ['videos', 'tab_videos', '📋'],
+  ];
+  document.querySelectorAll('.tab').forEach((el,i)=>{
+    if(tabDefs[i]) el.innerHTML=`<span class="tab-ic">${tabDefs[i][2]}</span>${t(tabDefs[i][1])}`;
+  });
+
+  // ── Stat labels ──
+  setText('lbl-subs',  t('lbl_subs'));
+  setText('lbl-money', t('lbl_money'));
+  setText('lbl-views', t('lbl_views'));
+  setText('lbl-vids',  t('lbl_vids'));
+
+  // ── Section titles ──
+  setText('stitle-goals',   t('goals'));
+  setText('stitle-action',  t('daily_action'));
+  setText('stitle-rivals',  t('rivals_title'));
+  setText('stitle-shop',    t('shop_title'));
+  setText('stitle-archive', t('archive_title'));
+
+  // ── Header day stat ──
+  const hd = document.getElementById('hd-day');
+  if(hd) hd.textContent = t('day_txt')+' '+S.day;
+
+  // ── Action buttons ──
+  const actionMap = [
+    ['btn-video',  'video_chek',  null, 'ac-video'],
+    ['btn-collab', 'collab',      null, 'ac-collab'],
+    ['btn-stream', 'stream',      null, 'ac-stream'],
+    ['btn-trend',  'trend',       null, 'ac-trend'],
+    ['btn-partner','partner',     null, 'ac-partner'],
+    ['btn-sponsor','sponsor',     null, 'ac-sponsor'],
+  ];
+  actionMap.forEach(([btnId, key])=>{
+    const btn=document.getElementById(btnId);
+    if(!btn) return;
+    const atEl=btn.querySelector('.at');
+    if(atEl) atEl.textContent=t(key);
+  });
+
+  // ── Day banner ──
+  updateDayBanner();
+
+  // ── Next day buttons ──
+  document.querySelectorAll('.ndaybtn').forEach(b=>b.textContent=t('next_day')+' →');
+
+  // ── Leaderboard tabs ──
+  renderLangGrid();
+  updateActionBtns();
+}
+
+// ═══════════════════════════════════════════
+// AUTH SYSTEM
+// ═══════════════════════════════════════════
+let currentUser = null;
+let isGuest = false;
+let currentLoginTab = 'login';
+
+function hashPass(p) {
+  let h = 0;
+  for(let i=0;i<p.length;i++) h = ((h<<5)-h)+p.charCodeAt(i), h|=0;
+  return h.toString(36);
+}
+
+function isValidGmail(email) {
+  return /^[a-zA-Z0-9._%+\-]+@gmail\.com$/i.test(email.trim());
+}
+
+function switchLoginTab(tab) {
+  currentLoginTab = tab;
+  document.getElementById('ltab-login').classList.toggle('active', tab==='login');
+  document.getElementById('ltab-register').classList.toggle('active', tab==='register');
+  const gmailEl = document.getElementById('li-gmail');
+  if(gmailEl) gmailEl.style.display = tab==='register' ? 'block' : 'none';
+  setText('li-btn-txt', tab==='login' ? t('login') : t('register'));
+  document.getElementById('li-btn').onclick = tab==='login' ? doLogin : doRegister;
+  document.getElementById('login-err').textContent = '';
+}
+
+async function doLogin() {
+  const u = (document.getElementById('li-user').value||'').trim();
+  const p = (document.getElementById('li-pass').value||'');
+  const err = document.getElementById('login-err');
+  if(!u||!p){err.textContent=t('err_empty_login');return;}
+  if(u.length<3){err.textContent=t('err_user');return;}
+  if(p.length<4){err.textContent=t('err_pass');return;}
+  err.textContent='⏳ ...';
+  try {
+    let rec;
+    try { rec = await window.storage.get('user:'+u.toLowerCase()); } catch(e){ rec=null; }
+    if(!rec){ err.textContent=t('err_wrong'); return; }
+    const data = JSON.parse(rec.value);
+    if(data.ph !== hashPass(p)){ err.textContent=t('err_wrong'); return; }
+    currentUser = {username:u, usernameKey:u.toLowerCase(), gmail:data.gmail||''};
+    isGuest = false;
+    try {
+      const saved = await window.storage.get('save:'+u.toLowerCase());
+      if(saved) { const gs = JSON.parse(saved.value); Object.assign(S, gs); }
+    } catch(e){}
+    enterGame();
+    toast(t('ok_login')+', '+u+'! 👋','✅');
+  } catch(e){ err.textContent='Hata: '+e.message; }
+}
+
+async function doRegister() {
+  const u     = (document.getElementById('li-user').value||'').trim();
+  const gmail = (document.getElementById('li-gmail').value||'').trim();
+  const p     = (document.getElementById('li-pass').value||'');
+  const err   = document.getElementById('login-err');
+  if(!u||!gmail||!p){err.textContent=t('err_empty');return;}
+  if(u.length<3){err.textContent=t('err_user');return;}
+  if(!isValidGmail(gmail)){err.textContent=t('err_gmail');return;}
+  if(p.length<4){err.textContent=t('err_pass');return;}
+  err.textContent='⏳ ...';
+  try {
+    try {
+      const ex = await window.storage.get('user:'+u.toLowerCase());
+      if(ex){ err.textContent=t('err_exists'); return; }
+    } catch(e){}
+    await window.storage.set('user:'+u.toLowerCase(), JSON.stringify({ph:hashPass(p), gmail:gmail, created:Date.now()}));
+    currentUser = {username:u, usernameKey:u.toLowerCase(), gmail:gmail};
+    isGuest = false;
+    enterGame();
+    toast(t('ok_register')+' '+t('ok_login')+', '+u+'! 🎉','✅');
+  } catch(e){ err.textContent='Hata: '+e.message; }
+}
+
+async function doDrawerLogin() {
+  const u = (document.getElementById('d-user').value||'').trim();
+  const p = (document.getElementById('d-pass').value||'');
+  if(!u||!p){toast(t('err_empty_login'),'❌');return;}
+  document.getElementById('li-user').value=u;
+  document.getElementById('li-pass').value=p;
+  await doLogin();
+  if(currentUser) closeDrawer();
+}
+async function doDrawerRegister() {
+  toast('Kayıt için ana ekranı kullan','ℹ️');
+  closeDrawer();
+  document.getElementById('login-screen').classList.remove('hidden');
+  switchLoginTab('register');
+}
+
+function playAsGuest() {
+  isGuest = true; currentUser = null;
+  enterGame();
+  toast(t('guest_warn'),'👤');
+}
+
+function doLogout() {
+  saveGame();
+  currentUser = null; isGuest = false;
+  resetGame();
+  closeDrawer();
+  document.getElementById('login-screen').classList.remove('hidden');
+  switchLoginTab('login');
+  updateDrawerAuth();
+}
+
+function enterGame() {
+  document.getElementById('login-screen').classList.add('hidden');
+  updateDrawerAuth();
+  initGameFull();
+}
+
+function updateDrawerAuth() {
+  const info = document.getElementById('drawer-user-info');
+  const form = document.getElementById('drawer-login-form');
+  const out  = document.getElementById('drawer-logout-sec');
+  if(currentUser) {
+    if(info) info.style.display='flex';
+    if(form) form.style.display='none';
+    if(out)  out.style.display='block';
+    setText('d-ava', LEVELS[S.level].av);
+    setText('d-uname', currentUser.username);
+    setText('d-ustats', fmt(S.subs)+' '+t('lbl_subs')+' • ₺'+fmt(S.money));
+  } else {
+    if(info) info.style.display='none';
+    if(form) form.style.display='block';
+    if(out)  out.style.display='none';
+  }
+}
+
+// ═══════════════════════════════════════════
+// SAVE / LOAD
+// ═══════════════════════════════════════════
+async function saveGame() {
+  if(!currentUser||isGuest) return;
+  try {
+    await window.storage.set('save:'+currentUser.usernameKey, JSON.stringify(S));
+    await window.storage.set('lb:'+currentUser.usernameKey, JSON.stringify({
+      username: currentUser.username,
+      subs: S.subs, money: S.money, day: S.day, ts: Date.now()
+    }), true);
+    toast(t('saved'),'☁️');
+  } catch(e){}
+}
+setInterval(saveGame, 60000);
+
+// ═══════════════════════════════════════════
+// LEADERBOARD
+// ═══════════════════════════════════════════
+let lbTab = 'subs';
+function switchLbTab(tab) {
+  lbTab = tab;
+  document.getElementById('lbt-subs').classList.toggle('active', tab==='subs');
+  document.getElementById('lbt-money').classList.toggle('active', tab==='money');
+  setText('lbt-subs-txt', t('lb_subs'));
+  setText('lbt-money-txt', t('lb_money'));
+  loadLeaderboard();
+}
+
+async function loadLeaderboard() {
+  const el = document.getElementById('lb-list');
+  if(!el) return;
+  el.innerHTML = `<div class="lb-loading">${t('loading')}</div>`;
+  try {
+    const res = await window.storage.list('lb:', true);
+    if(!res||!res.keys||!res.keys.length){ el.innerHTML=`<div class="lb-loading">${t('no_records')}</div>`; return; }
+    const entries = [];
+    for(const key of res.keys.slice(0,100)) {
+      try { const r=await window.storage.get(key,true); if(r) entries.push(JSON.parse(r.value)); } catch(e){}
+    }
+    entries.sort((a,b)=> lbTab==='subs' ? b.subs-a.subs : b.money-a.money);
+    const myKey = currentUser?.usernameKey;
+    el.innerHTML = entries.slice(0,50).map((e,i)=>{
+      const isMe = myKey && e.username.toLowerCase()===myKey;
+      const rc = i===0?'r1':i===1?'r2':i===2?'r3':'';
+      const val = lbTab==='subs' ? fmt(e.subs)+' '+t('lbl_subs') : '₺'+fmt(e.money);
+      const score = lbTab==='subs' ? fmt(e.subs) : '₺'+fmt(e.money);
+      return `<div class="lb-item${isMe?' me':''}">
+        <div class="lb-rank ${rc}">${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</div>
+        <div class="lb-ava">🎬</div>
+        <div class="lb-info">
+          <div class="lb-name">${e.username}${isMe?' 👈':''}</div>
+          <div class="lb-val">${val} • ${t('day_txt')} ${e.day||1}</div>
+        </div>
+        <div class="lb-score">${score}</div>
+      </div>`;
+    }).join('');
+  } catch(e){ el.innerHTML=`<div class="lb-loading">${t('lb_fail')}</div>`; }
+}
+
+// ═══════════════════════════════════════════
+// DRAWER
+// ═══════════════════════════════════════════
+function openDrawer() {
+  document.getElementById('drawer-ov').classList.add('open');
+  document.getElementById('drawer').classList.add('open');
+  updateDrawerAuth();
+  loadLeaderboard();
+  renderLangGrid();
+  applyLangToUI();
+}
+function closeDrawer() {
+  document.getElementById('drawer-ov').classList.remove('open');
+  document.getElementById('drawer').classList.remove('open');
+}
+
+
+
+
+// ═══════════════════════════════════════════
+// YORUM VERİTABANI
+// ═══════════════════════════════════════════
+const COMMENT_TEMPLATES = {
+  positive: [
+    {name:'Ahmet K.', av:'😊', texts:['Harika video! Devam et 🔥','Bu içeriği çok sevdim!','Abone oldum, bu videodan sonra!','Mükemmel anlatım, tebrikler!']},
+    {name:'Zeynep A.', av:'🌟', texts:['Her zaman kaliteli içerik 👏','Bu kanal çok büyüyecek!','Arkadaşlarıma önerdim!','İzlemesi çok keyifliydi!']},
+    {name:'Mert S.', av:'🎮', texts:['Algoritma seni öne çıkarmış, hak etmiş!','Bu tip içerikler çok lazımdı!','Keşke daha önce bulmuştum bu kanalı.']},
+    {name:'Elif B.', av:'💙', texts:['Yıllar sonra bunu tekrar izleyeceğim 😂','En iyi kanal bu kategoride!','Beklemeye değdi!']},
+    {name:'Can T.', av:'🚀', texts:['Beni de içerik üreticisi olmaya özendirdin!','10/10 içerik!','Daha fazla video istiyoruz!']},
+  ],
+  negative: [
+    {name:'Kullanıcı123', av:'😤', texts:['Bu video hayal kırıklığıydı...','Aboneliği bıraktım, üzgünüm.','Kalite düşmüş bence.']},
+    {name:'AnonymousViewer', av:'🙄', texts:['Clickbait başlık, içerik zayıf.','Bu konuyu daha iyi anlatan var.','Beklentimi karşılamadı.']},
+    {name:'KritikYapan', av:'😒', texts:['Ses kalitesi çok kötüydü bu videoda.','Çok uzun ve sıkıcı olmuş.','Düzenlemesi berbat.']},
+  ],
+  neutral: [
+    {name:'MeraklıBiri', av:'🤔', texts:['Bu konuda daha fazla video yapar mısın?','Devam serisi gelecek mi?','Kaynak paylaşabilir misin?']},
+    {name:'YeniAbone', av:'👋', texts:['Yeni abone oldum, eski videolar da iyi mi?','Başka hangi kanalları önerirsin?']},
+    {name:'TarafsızGörüş', av:'⚖️', texts:['İyi bir içerik ama gelişme payı var.','Orta seviye bir video, daha iyisi gelebilir.']},
+  ],
+};
+
+const REPLY_TEMPLATES = [
+  'Teşekkür ederim! 🙏',
+  'Yorumun için sağ ol! Devam edeceğiz 💪',
+  'Destek için çok teşekkürler! ❤️',
+  'Anlıyorum, bir sonraki videoda daha iyi olacak!',
+  'Haklısın, geliştirmeye çalışıyorum!',
+  'Çok motive edici, teşekkürler! 🔥',
+  'Yapabileceğimizin en iyisini yapmaya çalışıyoruz!',
+];
+
+function generateComments(videoTitle, subsGained) {
+  const count = Math.min(5, Math.max(1, Math.floor(Math.random()*3)+1));
+  const newComments = [];
+  for(let i=0; i<count; i++){
+    // Abone kazanımına göre pozitif/negatif oranı
+    const r = Math.random();
+    let pool, type;
+    if(r < 0.65){ pool = COMMENT_TEMPLATES.positive; type='positive'; }
+    else if(r < 0.85){ pool = COMMENT_TEMPLATES.neutral; type='neutral'; }
+    else { pool = COMMENT_TEMPLATES.negative; type='negative'; }
+    const tpl = pool[rand(0, pool.length-1)];
+    newComments.push({
+      name: tpl.name,
+      av: tpl.av,
+      text: tpl.texts[rand(0, tpl.texts.length-1)],
+      type,
+      videoTitle,
+      time: 'az önce',
+      replied: false,
+      id: Date.now() + i,
+    });
+  }
+  S.comments = [...newComments, ...S.comments].slice(0, 30);
+}
+
+function replyComment(id) {
+  const cmt = S.comments.find(c=>c.id===id);
+  if(!cmt || cmt.replied) return;
+  cmt.replied = true;
+  cmt.replyText = REPLY_TEMPLATES[rand(0, REPLY_TEMPLATES.length-1)];
+  // Yanıt bağlılık artırır
+  const loyaltyGain = cmt.type==='negative' ? 3 : 1;
+  addLoyalty(loyaltyGain);
+  renderComments();
+  updateCommunityUI();
+  toast('Yorum yanıtlandı! +'+loyaltyGain+' bağlılık puanı','💬');
+}
+
+function renderComments() {
+  const el = document.getElementById('comment-feed');
+  if(!el) return;
+  if(!S.comments.length){
+    el.innerHTML='<div style="color:var(--muted);font-size:.8rem;text-align:center;padding:20px;">Henüz yorum yok — video çekince yorumlar gelecek!</div>';
+    return;
+  }
+  el.innerHTML = S.comments.slice(0,20).map(c=>`
+    <div class="cmt-item ${c.type}">
+      <div class="cmt-top">
+        <span class="cmt-ava">${c.av}</span>
+        <span class="cmt-name">${c.name}</span>
+        <span class="cmt-time">${c.time}</span>
+      </div>
+      <div class="cmt-text">${c.text}</div>
+      ${c.replied
+        ? `<div class="cmt-replied">↩ Sen: ${c.replyText}</div>`
+        : `<button class="cmt-reply-btn" onclick="replyComment(${c.id})">↩ Yanıtla</button>`
+      }
+    </div>`).join('');
+}
+
+// ═══════════════════════════════════════════
+// İZLEYİCİ TOPLULUĞU
+// ═══════════════════════════════════════════
+function addLoyalty(n) {
+  S.loyalty = Math.max(0, Math.min(100, (S.loyalty||0) + n));
+  // 100'e ulaşınca sadık hayran ekle ve sıfırla
+  if(S.loyalty >= 100){
+    const newFans = Math.max(1, Math.floor(S.subs * 0.002));
+    S.loyalFans = (S.loyalFans||0) + newFans;
+    S.loyalty = 0;
+    floatn('💜 +'+newFans+' Sadık Hayran kazandın!');
+  }
+  updateCommunityUI();
+}
+
+function updateCommunityUI() {
+  const lf = document.getElementById('loyalty-fill');
+  const lv = document.getElementById('loyalty-val');
+  const ft = document.getElementById('fan-total');
+  const fl = document.getElementById('fan-loyal');
+  const fr = document.getElementById('fan-rate');
+  if(lf) lf.style.width = (S.loyalty||0) + '%';
+  if(lv) lv.textContent = (S.loyalty||0) + ' / 100';
+  if(ft) ft.textContent = fmt(S.subs);
+  if(fl) fl.textContent = fmt(S.loyalFans||0);
+  const rate = S.subs > 0 ? Math.min(99, Math.round((S.loyalFans||0)/S.subs*100)) : 0;
+  if(fr) fr.textContent = rate + '%';
+}
+
+// ═══════════════════════════════════════════
+// KANAL ANALİTİĞİ
+// ═══════════════════════════════════════════
+let videoHistory = []; // son videoların kazanım geçmişi
+
+function recordVideoStat(cat, subs, money, views) {
+  // Kategori istatistiği güncelle
+  if(!S.categoryStats) S.categoryStats = {};
+  if(!S.categoryStats[cat]) S.categoryStats[cat] = {vids:0, subs:0, money:0, views:0};
+  S.categoryStats[cat].vids++;
+  S.categoryStats[cat].subs += subs;
+  S.categoryStats[cat].money += money;
+  S.categoryStats[cat].views += views;
+  // Video geçmişi
+  videoHistory.unshift({cat, subs, money, views, day:S.day});
+  if(videoHistory.length > 14) videoHistory.pop();
+}
+
+function renderAnalytics() {
+  // Özet kartlar
+  const cards = document.getElementById('analytics-cards');
+  if(cards){
+    const avgSubs = videoHistory.length ? Math.round(videoHistory.reduce((a,v)=>a+v.subs,0)/videoHistory.length) : 0;
+    const avgViews = videoHistory.length ? Math.round(videoHistory.reduce((a,v)=>a+v.views,0)/videoHistory.length) : 0;
+    const totalEarned = videoHistory.reduce((a,v)=>a+v.money,0);
+    const subRate = S.views > 0 ? ((S.subs/S.views)*100).toFixed(2) : '0.00';
+    cards.innerHTML = `
+      <div class="stat-card"><div class="sc-label">Ortalama Abone/Video</div><div class="sc-val" style="color:#ff6b6b">~${fmt(avgSubs)}</div><div class="sc-sub">Son ${videoHistory.length} video</div></div>
+      <div class="stat-card"><div class="sc-label">Ortalama İzlenme</div><div class="sc-val" style="color:var(--blue)">~${fmt(avgViews)}</div><div class="sc-sub">Son ${videoHistory.length} video</div></div>
+      <div class="stat-card"><div class="sc-label">Abone/İzlenme Oranı</div><div class="sc-val" style="color:var(--green)">%${subRate}</div><div class="sc-sub">Kanal geneli</div></div>
+      <div class="stat-card"><div class="sc-label">Sadık Hayran Oranı</div><div class="sc-val" style="color:var(--purple)">${S.subs>0?Math.round((S.loyalFans||0)/S.subs*100):0}%</div><div class="sc-sub">${fmt(S.loyalFans||0)} sadık hayran</div></div>
+    `;
+  }
+  // Kategori barları
+  const catList = document.getElementById('cat-bar-list');
+  if(catList && S.categoryStats){
+    const cats = Object.entries(S.categoryStats).sort((a,b)=>b[1].subs-a[1].subs);
+    if(!cats.length){ catList.innerHTML='<div style="color:var(--muted);font-size:.8rem;text-align:center;padding:16px;">Henüz video çekilmedi.</div>'; }
+    else {
+      const maxSubs = Math.max(...cats.map(c=>c[1].subs), 1);
+      const catEmojis = {gaming:'🎮',vlog:'📹',yemek:'🍕',komedi:'🤣',muzik:'🎵',tech:'💻',spor:'🏋️',gezi:'✈️',egitim:'📚',challenge:'🏆',mukbang:'🍜',asmr:'🎧'};
+      const colors = ['#ff6b6b','#ffd700','#00e676','#00b0ff','#b388ff','#ff9800','#e91e63','#26c6da','#ff4444','#66bb6a','#29b6f6','#ab47bc'];
+      catList.innerHTML = cats.slice(0,8).map(([id,st],i)=>`
+        <div class="cat-bar-item">
+          <div class="cat-bar-top">
+            <span>${catEmojis[id]||'🎬'} ${id.charAt(0).toUpperCase()+id.slice(1)}</span>
+            <span style="color:${colors[i%colors.length]}">${st.vids} video • ${fmt(st.subs)} abone</span>
+          </div>
+          <div class="cat-bar-track">
+            <div class="cat-bar-fill" style="width:${Math.round(st.subs/maxSubs*100)}%;background:${colors[i%colors.length]};"></div>
+          </div>
+        </div>`).join('');
+    }
+  }
+  // Mini grafik
+  const chartEl = document.getElementById('chart-bars');
+  if(chartEl){
+    const last7 = videoHistory.slice(0,7).reverse();
+    if(!last7.length){ chartEl.innerHTML='<div style="color:var(--muted);font-size:.75rem;margin:auto;">Veri yok</div>'; }
+    else {
+      const maxS = Math.max(...last7.map(v=>v.subs), 1);
+      chartEl.innerHTML = last7.map((v,i)=>`
+        <div class="chart-bar-col">
+          <div class="chart-bar" style="height:${Math.max(4,Math.round(v.subs/maxS*68))}px;background:${v.subs>maxS*0.7?'var(--green)':v.subs>maxS*0.4?'var(--blue)':'var(--muted)'};" title="+${v.subs} abone"></div>
+          <div class="chart-bar-lbl">G${v.day}</div>
+        </div>`).join('');
+    }
+  }
+}
+
+// ═══════════════════════════════════════════
+// TURNUVA SİSTEMİ
+// ═══════════════════════════════════════════
+const TOURNEY_PRIZES = [
+  {rank:1, label:'🥇 1. Ödül', subs:5000,  money:50000},
+  {rank:2, label:'🥈 2. Ödül', subs:2000,  money:20000},
+  {rank:3, label:'🥉 3. Ödül', subs:800,   money:8000},
+  {rank:4, label:'4. - 5.',   subs:200,   money:2000},
+  {rank:6, label:'6. - 10.',  subs:50,    money:500},
+];
+
+// Yapay rakip turnuva skorları
+// Rakip turnuva skorları — haftalık birikimli, deterministik (seed bazlı)
+// Her rakibin kendi "gücü" var, günde sabit miktarda puan üretir
+const TOURNEY_RIVALS = [
+  {name:'GamingTürk',  ic:'🎮', baseSubs:5000,   dailyGain:120,  variance:0.30},
+  {name:'TechTürkiye', ic:'💻', baseSubs:12000,  dailyGain:200,  variance:0.25},
+  {name:'VlogQueen',   ic:'👑', baseSubs:4500000,dailyGain:8000, variance:0.20},
+  {name:'YemekUstası', ic:'🍳', baseSubs:900000, dailyGain:1800, variance:0.35},
+  {name:'KomediKral',  ic:'🤣', baseSubs:120000, dailyGain:450,  variance:0.40},
+  {name:'FitnessKral', ic:'🏋️', baseSubs:250000, dailyGain:700,  variance:0.28},
+  {name:'MüziklerTR',  ic:'🎵', baseSubs:55000,  dailyGain:280,  variance:0.32},
+  {name:'GameMaster',  ic:'🕹️', baseSubs:2000000,dailyGain:4500, variance:0.22},
+  {name:'BarışTV',     ic:'🌟', baseSubs:10000000,dailyGain:18000,variance:0.15},
+];
+
+function getSimTourneyScores() {
+  const weekNum = Math.floor((S.day-1)/7)+1;
+  const daysIntoWeek = ((S.day-1) % 7) + 1; // 1-7
+  // Her rakip bu hafta kaç gün içerik üretmiş gibi hesapla
+  return TOURNEY_RIVALS.map(r => {
+    // Deterministic seed: hafta + isim
+    const seed = weekNum * 137 + r.name.charCodeAt(0) * 31;
+    const pseudoRand = (n) => ((seed * n * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+    // Günlük kazanım * geçen gün sayısı + varyans
+    let score = 0;
+    for(let d = 1; d <= daysIntoWeek; d++){
+      const dayRand = 0.7 + pseudoRand(d) * r.variance * 2;
+      score += Math.floor(r.dailyGain * dayRand);
+    }
+    return {name: r.name, ic: r.ic, subs: r.baseSubs, score};
+  });
+}
+
+function renderTourney() {
+  const weekNum = Math.floor((S.day-1)/7)+1;
+  const daysLeft = 7 - ((S.day-1) % 7);
+  const el = document.getElementById('tourney-week-lbl');
+  if(el) el.textContent = `Hafta ${weekNum} — ${daysLeft} gün kaldı`;
+
+  const scoreEl = document.getElementById('tourney-score');
+  if(scoreEl) scoreEl.textContent = fmt(S.tourneyScore||0);
+
+  const myScore = S.tourneyScore||0;
+  const myName = currentUser?.username||'Sen';
+  const sims = getSimTourneyScores();
+  const all = [...sims, {name:myName, ic:'🎬', subs:S.subs, score:myScore, isMe:true}];
+  all.sort((a,b)=>b.score-a.score);
+  const myRank = all.findIndex(x=>x.isMe)+1;
+
+  // Lider bilgisi
+  const leader = all[0];
+  const gap = Math.max(0, leader.score - myScore);
+
+  // Ödül göster
+  const prizeEl = document.getElementById('tourney-prize');
+  if(prizeEl){
+    if(myRank === 1){
+      prizeEl.innerHTML = `🥇 LİDERSİN! +${fmt(TOURNEY_PRIZES[0].subs)} abone & ₺${fmt(TOURNEY_PRIZES[0].money)} bekliyor`;
+    } else if(myRank <= 3){
+      prizeEl.innerHTML = `${TOURNEY_PRIZES[myRank-1].label}: +${fmt(TOURNEY_PRIZES[myRank-1].subs)} abone & ₺${fmt(TOURNEY_PRIZES[myRank-1].money)} • Lidere ${fmt(gap)} puan fark var`;
+    } else {
+      prizeEl.innerHTML = `${myRank}. sıradasın • Lidere ${fmt(gap)} puan fark — daha fazla video çek!`;
+    }
+  }
+
+  // Tablo
+  const lb = document.getElementById('tourney-lb');
+  if(lb){
+    lb.innerHTML = all.map((p,i)=>{
+      const rankColor = i===0?'var(--gold)':i===1?'#c0c0c0':i===2?'#cd7f32':'#555';
+      const rankIcon  = i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1);
+      const isTop = i < 3;
+      return `<div class="tlb-item ${p.isMe?'me':''}" style="${isTop?'border-color:'+rankColor+'44;':''}">
+        <div class="tlb-rank" style="color:${rankColor}">${rankIcon}</div>
+        <div class="tlb-info">
+          <div class="tlb-name">${p.ic||'🎬'} ${p.name}${p.isMe?' 👈':''}</div>
+          <div style="font-size:.62rem;color:#555;margin-top:1px;">${fmt(p.subs||0)} abone</div>
+        </div>
+        <div class="tlb-score" style="color:${p.isMe?'var(--purple)':rankColor}">${fmt(p.score)}</div>
+      </div>`;
+    }).join('');
+  }
+}
+
+function checkTourneyWeekEnd() {
+  const weekNum = Math.floor((S.day-1)/7)+1;
+  const lastWeek = S.tourneyWeek||0;
+  if(weekNum > lastWeek && lastWeek > 0){
+    const myScore = S.tourneyScore||0;
+    const sims = getSimTourneyScores();
+    const all = [...sims, {score:myScore, isMe:true}];
+    all.sort((a,b)=>b.score-a.score);
+    const myRank = all.findIndex(x=>x.isMe)+1;
+    const rankMap = {1:1, 2:2, 3:3, 4:5, 5:5, 6:10, 7:10, 8:10, 9:10, 10:10};
+    const prize = TOURNEY_PRIZES.find(p => myRank <= (rankMap[p.rank]||p.rank));
+    if(prize && myScore > 0){
+      addSubs(prize.subs); addMoney(prize.money);
+      sfxViral();
+      floatn('🏆 Turnuva '+myRank+'. oldun! +'+fmt(prize.subs)+' abone!');
+      toast('Haftalık turnuva ödülü: '+myRank+'. sıra • +'+fmt(prize.subs)+' abone, +₺'+fmt(prize.money),'🏆');
+    } else if(myScore === 0){
+      toast('Bu hafta turnuvaya katılmadın!','😴');
+    } else {
+      toast('Turnuva bitti, '+myRank+'. oldun. Daha çok video çek!','📊');
+    }
+    S.tourneyScore = 0;
+  }
+  S.tourneyWeek = weekNum;
+}
+
+// ═══════════════════════════════════════════
+// ROZET & BAŞARIM SİSTEMİ
+// ═══════════════════════════════════════════
+const BADGES = [
+  // Abone Rozetleri
+  {id:'subs_100',     ic:'🌱', name:'İlk 100',       desc:'100 aboneye ulaş',          cond:()=>S.subs>=100},
+  {id:'subs_1k',      ic:'⭐', name:'Bin Club',       desc:'1.000 abone',               cond:()=>S.subs>=1000},
+  {id:'subs_10k',     ic:'🥈', name:'10K Kreator',    desc:'10.000 abone',              cond:()=>S.subs>=10000},
+  {id:'subs_50k',     ic:'🏆', name:'50K Yıldız',     desc:'50.000 abone',              cond:()=>S.subs>=50000},
+  {id:'subs_100k',    ic:'🥇', name:'Gümüş Tuş',      desc:'100.000 abone',             cond:()=>S.subs>=100000},
+  {id:'subs_500k',    ic:'💫', name:'Yarım Milyon',    desc:'500.000 abone',             cond:()=>S.subs>=500000},
+  {id:'subs_1m',      ic:'💎', name:'Altın Tuş',       desc:'1.000.000 abone',           cond:()=>S.subs>=1000000},
+  {id:'subs_10m',     ic:'🔴', name:'Kırmızı Tuş',    desc:'10.000.000 abone',          cond:()=>S.subs>=10000000},
+  // Para Rozetleri
+  {id:'money_1k',     ic:'💰', name:'İlk Kazanç',     desc:'₺1.000 kazan',              cond:()=>S.money>=1000},
+  {id:'money_10k',    ic:'💵', name:'Para Akıyor',     desc:'₺10.000 kazan',             cond:()=>S.money>=10000},
+  {id:'money_100k',   ic:'💸', name:'Para Yağmuru',    desc:'₺100.000 kazan',            cond:()=>S.money>=100000},
+  {id:'money_1m',     ic:'🤑', name:'Milyoner',        desc:'₺1.000.000 kazan',          cond:()=>S.money>=1000000},
+  // Video Rozetleri
+  {id:'vids_10',      ic:'🎬', name:'İlk 10 Video',   desc:'10 video çek',              cond:()=>S.videos>=10},
+  {id:'vids_50',      ic:'📹', name:'İçerik Makinesi', desc:'50 video çek',              cond:()=>S.videos>=50},
+  {id:'vids_100',     ic:'🎞️', name:'100 Video',       desc:'100 video çek',             cond:()=>S.videos>=100},
+  {id:'vids_500',     ic:'📽️', name:'Dedike Creator',  desc:'500 video çek',             cond:()=>S.videos>=500},
+  // Gün Rozetleri
+  {id:'day_7',        ic:'📅', name:'1 Hafta',          desc:'7 gün oyna',                cond:()=>S.day>=7},
+  {id:'day_30',       ic:'🗓️', name:'1 Ay',             desc:'30 gün oyna',               cond:()=>S.day>=30},
+  {id:'day_100',      ic:'🏅', name:'100 Gün',          desc:'100 gün oyna',              cond:()=>S.day>=100},
+  // Özel Rozetler
+  {id:'collab_first', ic:'🤝', name:'İş Birliği',      desc:'İlk kolaborasyonu yap',     cond:()=>S.avid.collab>0},
+  {id:'viral_first',  ic:'🔥', name:'Viral Kral',       desc:'İlk viral videoyu yap',     cond:()=>S.viralCount>=1},
+  {id:'viral_10',     ic:'🔥🔥','name':'Viral Efsane',  desc:'10 kez viral ol',           cond:()=>S.viralCount>=10},
+  {id:'stream_first', ic:'🔴', name:'Canlı Yayıncı',   desc:'İlk canlı yayını aç',       cond:()=>S.aday.stream>0},
+  {id:'partner_first',ic:'🎞️', name:'Partner',         desc:'İlk partner video',         cond:()=>S.aday.partner>0},
+  {id:'sponsor_first',ic:'🏷️', name:'Sponsor Anlaşma', desc:'İlk sponsorluk al',         cond:()=>S.avid.sponsored>0},
+  {id:'all_equip',    ic:'🎯', name:'Tam Donanım',      desc:'Her kategoriden ekipman tak',cond:()=>Object.keys(S.equipment).length>=7},
+  {id:'season_full',  ic:'🌍', name:'4 Mevsim',         desc:'Tüm mevsimleri yaşa',       cond:()=>S.day>=120},
+  {id:'event_10',     ic:'⚡', name:'Olay Yaşayan',     desc:'10 rastgele olay yaşa',     cond:()=>S.eventCount>=10},
+  // Stüdyo Rozetleri
+  {id:'studio_1',   ic:'🏠', name:'Ev Stüdyosu',     desc:'Ev stüdyosuna geç',          cond:()=>S.studioLevel>=1},
+  {id:'studio_2',   ic:'🎬', name:'Profesyonel',      desc:'Pro stüdyoya geç',           cond:()=>S.studioLevel>=2},
+  {id:'studio_3',   ic:'🏢', name:'Ofis Sahibi',      desc:'YouTube ofisine geç',        cond:()=>S.studioLevel>=3},
+  {id:'studio_4',   ic:'🏙️', name:'Medya Patronu',   desc:'Medya şirketi kur',          cond:()=>S.studioLevel>=4},
+  {id:'studio_5',   ic:'🌟', name:'Yapım Efsanesi',   desc:'Yapım şirketine ulaş',       cond:()=>S.studioLevel>=5},
+];
+
+function checkBadges(){
+  let newBadge=false;
+  BADGES.forEach(b=>{
+    if(!S.earnedBadges.includes(b.id) && b.cond()){
+      S.earnedBadges.push(b.id);
+      newBadge=true;
+      // Popup yerine toast + float
+      setTimeout(()=>{ showBadgeEarnOverlay(b); }, 400);
+    }
+  });
+  if(newBadge) renderBadges();
+}
+
+function renderBadges(){
+  const el=document.getElementById('badge-shelf');
+  if(!el) return;
+  // Önce kazanılanlar, sonra kazanılmayanlar
+  const sorted=[...BADGES].sort((a,b)=>{
+    const ea=S.earnedBadges.includes(a.id);
+    const eb=S.earnedBadges.includes(b.id);
+    return ea===eb?0:(ea?-1:1);
+  });
+  el.innerHTML=sorted.map(b=>{
+    const earned=S.earnedBadges.includes(b.id);
+    return `<div class="rbadge ${earned?'earned':''}" title="${b.desc}">
+      <div class="rb-ic">${b.ic}</div>
+      <div class="rb-name">${b.name}</div>
+    </div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════
+// RASTGELE OLAYLAR SİSTEMİ
+// ═══════════════════════════════════════════
+const EVENTS=[
+  // Pozitif olaylar
+  {type:'pos', ic:'📰', typeLabel:'HABER',     title:'Medyada Yer Aldın!',      desc:'Bir online haber sitesi seni öne çıkardı. Yeni izleyiciler geliyor!',       effect:(s)=>({subs:Math.floor(s*rand(5,12)/100), money:0,    label:()=>'+'+fmt(Math.floor(S.subs*rand(5,12)/100))+' Abone', fn:()=>addSubs(Math.floor(S.subs*rand(5,12)/100))})},
+  {type:'pos', ic:'🌟', typeLabel:'ŞANS',      title:'Algoritma Seni Seçti!',   desc:'YouTube algoritması videolarından birini ana sayfada gösterdi.',            effect:(s)=>({subs:Math.floor(s*rand(8,18)/100), money:0,    label:()=>'+'+fmt(Math.floor(S.subs*rand(8,18)/100))+' Abone', fn:()=>addSubs(Math.floor(S.subs*rand(8,18)/100))})},
+  {type:'pos', ic:'💌', typeLabel:'İŞBİRLİĞİ', title:'Büyük Kanal Teklif Etti!',desc:'Tanınmış bir kanal sana iş birliği teklif etti. Bu büyük bir fırsat!',     effect:(s)=>({subs:Math.floor(s*rand(10,20)/100),money:0,    label:()=>'+'+fmt(Math.floor(S.subs*rand(10,20)/100))+' Abone',fn:()=>addSubs(Math.floor(S.subs*rand(10,20)/100))})},
+  {type:'pos', ic:'🎁', typeLabel:'ÖDÜL',       title:'Sponsor Sürprizi!',       desc:'Beklenmedik bir marka teklifle geldi. Ekstra ödeme yapıyorlar.',             effect:(s)=>({subs:0, money:Math.floor(s*0.05),             label:()=>'+₺'+fmt(Math.floor(S.subs*0.05)), fn:()=>addMoney(Math.floor(S.subs*0.05))})},
+  {type:'pos', ic:'📈', typeLabel:'TREND',      title:'Trende Girdин!',          desc:'Çektiğin son video beklenmedik şekilde trend listesine girdi!',              effect:(s)=>({subs:Math.floor(s*rand(15,30)/100),money:Math.floor(s*0.03), label:()=>'+'+fmt(Math.floor(S.subs*rand(15,30)/100))+' Abone', fn:()=>{addSubs(Math.floor(S.subs*rand(15,30)/100));addMoney(Math.floor(S.subs*0.03));}})},
+  {type:'pos', ic:'🎙️', typeLabel:'RÖPORTAJ',   title:'Podcast Daveti!',         desc:'Popüler bir podcast seni konuk olarak davet etti. Dinleyiciler seni tanıdı.',effect:(s)=>({subs:Math.floor(s*rand(6,14)/100), money:0,    label:()=>'+'+fmt(Math.floor(S.subs*rand(6,14)/100))+' Abone', fn:()=>addSubs(Math.floor(S.subs*rand(6,14)/100))})},
+  {type:'pos', ic:'🏅', typeLabel:'ÖDÜL',       title:'Creator Ödülü Kazandın!', desc:'Bir içerik ödül töreninde "Yılın Kanalı" dalında aday gösterildin.',        effect:(s)=>({subs:Math.floor(s*rand(5,10)/100), money:Math.floor(s*0.02), label:()=>'+'+fmt(Math.floor(S.subs*rand(5,10)/100))+' Abone +Para', fn:()=>{addSubs(Math.floor(S.subs*rand(5,10)/100));addMoney(Math.floor(S.subs*0.02));}})},
+  // Negatif olaylar
+  {type:'neg', ic:'😤', typeLabel:'TARTIŞMA',   title:'Controversy Çıktı!',      desc:'Bir videon yanlış anlaşıldı. Bazı izleyiciler aboneliği bıraktı.',           effect:(s)=>({subs:-Math.floor(s*rand(3,8)/100),  money:0,    label:()=>'-'+fmt(Math.floor(S.subs*rand(3,8)/100))+' Abone',  fn:()=>{S.subs=Math.max(0,S.subs-Math.floor(S.subs*rand(3,8)/100));}})},
+  {type:'neg', ic:'⚖️', typeLabel:'UYARI',      title:'Telif Uyarısı!',          desc:'Bir videon telif ihlali aldı. Reklam gelirlerin geçici olarak kesildi.',     effect:(s)=>({subs:0, money:-Math.floor(s*0.03),             label:()=>'-₺'+fmt(Math.floor(S.subs*0.03)),  fn:()=>{S.money=Math.max(0,S.money-Math.floor(S.subs*0.03));}})},
+  {type:'neg', ic:'🤒', typeLabel:'KİŞİSEL',    title:'Hastalandın!',            desc:'Bu hafta yeterince içerik üretemeyeceksin. Abone büyümen yavaşladı.',       effect:(s)=>({subs:-Math.floor(s*rand(1,4)/100),  money:0,    label:()=>'-'+fmt(Math.floor(S.subs*rand(1,4)/100))+' Abone',  fn:()=>{S.subs=Math.max(0,S.subs-Math.floor(S.subs*rand(1,4)/100));}})},
+  {type:'neg', ic:'🔇', typeLabel:'TEKNİK',     title:'Ses Sorunu!',             desc:'Son videoda ses kalitesi çok kötüydü. İzleyiciler şikayet etti.',            effect:(s)=>({subs:-Math.floor(s*rand(2,5)/100),  money:0,    label:()=>'-'+fmt(Math.floor(S.subs*rand(2,5)/100))+' Abone',  fn:()=>{S.subs=Math.max(0,S.subs-Math.floor(S.subs*rand(2,5)/100));}})},
+  // Nötr/Sürpriz olaylar
+  {type:'neu', ic:'🤝', typeLabel:'SÜRPRİZ',    title:'Rakip Barış Teklif Etti!',desc:'Bir rakip kanal seninle ortak video yapmak istiyor. İlginç bir gelişme.',   effect:(s)=>({subs:Math.floor(s*rand(3,7)/100),  money:Math.floor(s*0.01), label:()=>'+'+fmt(Math.floor(S.subs*rand(3,7)/100))+' Abone +Para', fn:()=>{addSubs(Math.floor(S.subs*rand(3,7)/100));addMoney(Math.floor(S.subs*0.01));}})},
+  {type:'neu', ic:'🎲', typeLabel:'ŞANS',        title:'Bağış Yağmuru!',          desc:'Sadık bir izleyicin büyük bir bağış yaptı. Topluluğun seviyor!',            effect:(s)=>({subs:0, money:Math.floor(s*rand(2,6)/100),      label:()=>'+₺'+fmt(Math.floor(S.subs*rand(2,6)/100)),fn:()=>addMoney(Math.floor(S.subs*rand(2,6)/100))})},
+  {type:'neu', ic:'📲', typeLabel:'SOSYAL',      title:'Tweet Viral Oldu!',       desc:'Attığın bir tweet büyük ilgi gördü. Yeni takipçiler kanala akıyor.',        effect:(s)=>({subs:Math.floor(s*rand(4,9)/100),  money:0,    label:()=>'+'+fmt(Math.floor(S.subs*rand(4,9)/100))+' Abone',  fn:()=>addSubs(Math.floor(S.subs*rand(4,9)/100))})},
+];
+
+function triggerRandomEvent(){
+  // Günde en fazla 1 olay, en az 2 günde bir
+  if(S.lastEventDay>=S.day) return;
+  if(S.day-S.lastEventDay<2) return;
+  // %60 şansla tetiklenir
+  if(Math.random()>0.60) return;
+  S.lastEventDay=S.day;
+  S.eventCount=(S.eventCount||0)+1;
+
+  // Abone sayısına göre negatif olay olasılığı artar
+  const negChance = Math.min(0.40, 0.15 + S.subs/500000*0.25);
+  const r=Math.random();
+  let pool;
+  if(r<negChance) pool=EVENTS.filter(e=>e.type==='neg');
+  else if(r<negChance+0.15) pool=EVENTS.filter(e=>e.type==='neu');
+  else pool=EVENTS.filter(e=>e.type==='pos');
+
+  const ev=pool[rand(0,pool.length-1)];
+  showEventPopup(ev);
+}
+
+function showEventPopup(ev){
+  const eff=ev.effect(S.subs);
+  // Apply effect first
+  eff.fn();
+  checkBadges();
+  updateUI();
+
+  const typeColors={pos:'var(--green)',neg:'#ff6b6b',neu:'var(--blue)'};
+  const col=typeColors[ev.type]||'#fff';
+
+  document.getElementById('ev-ic').textContent=ev.ic;
+  document.getElementById('ev-type').style.color=col;
+  document.getElementById('ev-type').textContent=ev.typeLabel;
+  document.getElementById('ev-title').textContent=ev.title;
+  document.getElementById('ev-desc').textContent=ev.desc;
+  const effEl=document.getElementById('ev-effect');
+  effEl.className='ev-effect '+ev.type;
+  effEl.textContent=eff.label();
+  document.getElementById('event-popup').classList.remove('hidden');
+}
+
+function closeEvent(){
+  document.getElementById('event-popup').classList.add('hidden');
+}
+
+// ═══════════════════════════════════════════
+// GAME RESET / FULL INIT
+// ═══════════════════════════════════════════
+function resetGame() {
+  S.subs=0;S.money=0;S.views=0;S.videos=0;S.xp=0;S.level=0;
+  S.day=1;S.season=0;S.todayVids=0;S.dailyGoal=3;
+  S.equipment={};S.owned=[];S.videoFeed=[];S.rivals=[];
+  S.avid={collab:0,trend:0,sponsored:0};S.aday={stream:0,partner:0};
+  S.earnedBadges=[];S.lastEventDay=0;S.viralCount=0;S.eventCount=0;S.studioLevel=0;S.dailyGoal=3;
+  S.loyalty=0;S.loyalFans=0;S.comments=[];S.categoryStats={};S.tourneyWeek=0;S.tourneyScore=0;
+  S.quests=[];S.questDay=0;S.questsDone=0;
+  SCATS.forEach(c=>{const s=ITEMS.find(i=>i.cat===c.id&&i.price===0);if(s) S.equipment[c.id]=s.id;});
+}
+
+function initGameFull() {
+  if(!S.rivals||!S.rivals.length) initRivals();
+  if(!S.earnedBadges) S.earnedBadges=[];
+  if(!S.viralCount) S.viralCount=0;
+  if(!S.eventCount) S.eventCount=0;
+  SCATS.forEach(c=>{if(!S.equipment[c.id]){const s=ITEMS.find(i=>i.cat===c.id&&i.price===0);if(s) S.equipment[c.id]=s.id;}});
+  if(S.studioLevel===undefined) S.studioLevel=0;
+  if(!S.categoryStats) S.categoryStats={};
+  if(!S.comments) S.comments=[];
+  if(!S.tourneyScore) S.tourneyScore=0;
+  if(!S.tourneyWeek) S.tourneyWeek=Math.floor((S.day-1)/7)+1;
+  if(!S.quests) S.quests=[];
+  if(!S.questsDone) S.questsDone=0;
+  const st=STUDIOS[S.studioLevel];
+  if(st&&st.dailyBonus) S.dailyGoal=3+st.dailyBonus;
+  initShop(); updateDayBanner(); updateUI(); renderFeed(); renderBadges(); checkAndRefreshQuests(); applyLangToUI();
+}
+
+// ─────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────
+(async () => {
+  try { const sl=localStorage.getItem('yt_lang'); if(sl&&LANGS[sl]) currentLang=sl; } catch(e){}
+  renderLangGrid();
+  applyLangToUI();
+  if(typeof window.storage === 'undefined') {
+    playAsGuest(); return;
+  }
+  document.getElementById('login-screen').classList.remove('hidden');
+  switchLoginTab('login');
+})();
+
+</script>
+
+<!-- DEVELOPER FOOTER -->
+<div id="dev-footer">
+  <div class="dev-inner">
+    <div class="dev-game-name">📺 YouTuber Simulator</div>
+    <div class="dev-divider"></div>
+    <div class="dev-label">Developed by</div>
+    <div class="dev-card">
+      <div class="dev-avatar">EİY</div>
+      <div class="dev-info">
+        <div class="dev-name">Eren İhsan Yılmaz</div>
+        <div class="dev-role">Game Developer &amp; Designer</div>
+      </div>
+    </div>
+    <div class="dev-copy">© 2025 · All rights reserved</div>
+  </div>
+</div>
+
+<style>
+#dev-footer{
+  padding:20px 16px 30px;
+  background:linear-gradient(180deg,#080810 0%,#0c0c1a 100%);
+  border-top:1px solid #1e1e32;
+  margin-top:4px;
+}
+.dev-inner{
+  max-width:340px;
+  margin:0 auto;
+  text-align:center;
+}
+.dev-game-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.1rem;
+  color:var(--red);
+  letter-spacing:2px;
+  margin-bottom:12px;
+  opacity:.7;
+}
+.dev-divider{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,transparent,#3a3a5a,transparent);
+  margin:0 auto 14px;
+}
+.dev-label{
+  font-size:.6rem;
+  color:#444;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.dev-card{
+  display:inline-flex;
+  align-items:center;
+  gap:11px;
+  background:linear-gradient(135deg,#161628,#1e1e32);
+  border:1px solid #2e2e48;
+  border-radius:14px;
+  padding:10px 18px;
+  margin-bottom:12px;
+}
+.dev-avatar{
+  width:38px;height:38px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--red),#ff6b35);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;font-weight:900;color:#fff;
+  letter-spacing:.5px;
+  flex-shrink:0;
+  box-shadow:0 0 12px #ff000030;
+}
+.dev-info{text-align:left;}
+.dev-name{
+  font-weight:900;
+  font-size:.9rem;
+  color:#e8e8f0;
+  letter-spacing:.3px;
+  line-height:1.2;
+}
+.dev-role{
+  font-size:.62rem;
+  color:#5a5a7a;
+  margin-top:2px;
+  letter-spacing:.2px;
+}
+.dev-copy{
+  font-size:.58rem;
+  color:#333;
+  letter-spacing:.5px;
+}
+</style>
+
+</body>
+</html>
